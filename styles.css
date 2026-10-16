@@ -1592,11 +1592,6 @@ p {
   font-style: italic;
 }
 
-.wake-transcript-note {
-  display: block;
-  font-size: 0.9rem;
-}
-
 .wake-hint {
   margin: 0.8em 0 0;
   color: var(--text-muted);
