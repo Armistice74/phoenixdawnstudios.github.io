@@ -1188,8 +1188,9 @@ p {
   font-size: 10px;
   font-size: max(10px, 3.75cqw);
   font-weight: 800;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.02em;
   line-height: 1.2;
+  white-space: nowrap;
 }
 
 .tcard-stats dd {
@@ -1274,21 +1275,6 @@ p {
 .cast-feature:focus-within .cast-card .tcard::after {
   opacity: 1;
   background-position: 0 0;
-}
-
-.tcard-legend {
-  max-width: 17rem;
-  margin: 24px 0 0;
-  color: var(--text-muted);
-  text-wrap: balance;
-  font-size: 0.8rem;
-  letter-spacing: 0.03em;
-  text-align: center;
-}
-
-.tcard-legend b {
-  color: var(--accent-text);
-  font-weight: 800;
 }
 
 /* --- Her scene: a rounded window on a floating stage, like the app's home screen --- */
