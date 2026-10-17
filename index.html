@@ -62,7 +62,6 @@
         <p class="tagline">Joyful little apps for brighter mornings.</p>
         <div class="hero-actions">
           <a class="btn btn-primary" href="#app">Meet our first app</a>
-          <a class="btn btn-ghost" href="#contact">Say hello</a>
         </div>
       </div>
     </section>
@@ -226,7 +225,7 @@
         <div class="section-head">
           <p class="eyebrow">The Crushes</p>
           <h2 id="cast-title">Meet your Crushes</h2>
-          <p class="lede">Every Crush in our anime alarm app is a collectible trading card with a voice, a personality, and their own way of getting you out of bed. Our first three Crushes are already up: a radio host, a cat-girl baker, and a shrine maiden.</p>
+          <p class="lede">Every Crush in our anime alarm app is a collectible trading card with a voice, a personality, and their own way of getting you out of bed. Our first four Crushes are already up: a radio host, a cat-girl baker, a shrine maiden, and a pro hockey player.</p>
         </div>
 
         <!-- ===== CHARACTER: May Day (No.001). To add a character, copy from here... (see ADDING-CHARACTERS.md) ===== -->
@@ -495,15 +494,103 @@
         </article>
         <!-- ===== ...to here. ===== -->
 
+        <!-- ===== CHARACTER: Calder Early (No.004). To add a character, copy from here... (see ADDING-CHARACTERS.md) ===== -->
+        <article class="cast-feature cast-feature-flip rarity-rare" style="--char-accent: #A8D8F0" aria-labelledby="calder-name">
+          <!-- His trading card, drawn like the in-app card -->
+          <div class="cast-card">
+            <div class="tcard-holder">
+              <div class="tcard">
+                <div class="tcard-art">
+                  <img src="img/calder-card.jpg" width="600" height="838" loading="lazy" decoding="async" alt="Calder Early's card art: an anime man with tousled chestnut-brown hair, ice-blue eyes and a small nick through one eyebrow, smiling in an open navy hoodie lined in ice blue, with a silver chain and a small compass tattoo, in an empty ice rink at sunrise.">
+                  <p class="tcard-no"><span class="visually-hidden">Card </span>No.004</p>
+                  <span class="tcard-gem" aria-hidden="true"></span>
+                  <div class="tcard-plate">
+                    <p class="tcard-name">Calder Early</p>
+                    <p class="tcard-title">Your Brother's Best Friend</p>
+                    <dl class="tcard-stats">
+                      <div><dt>Cute</dt><dd>76</dd></div>
+                      <div><dt>Sass</dt><dd>60</dd></div>
+                      <div><dt>Flirt</dt><dd>86</dd></div>
+                      <div><dt>Wit</dt><dd>62</dd></div>
+                    </dl>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- His home-screen scene in a little floating "stage" (decorative).
+               IDLE LOOP TO-DO: his idle loop isn't made yet, so for now the stage shows his still scene picture.
+               Once img/calder-idle.mp4 exists (ADDING-CHARACTERS.md, step 1, command 3), replace the <img> line below
+               with this line (the same as May's), and the script at the bottom will start playing it by itself:
+               <video class="stage-video" data-idle src="img/calder-idle.mp4" poster="img/calder-scene.jpg" width="480" height="720" muted loop playsinline preload="none" disablepictureinpicture disableremoteplayback></video> -->
+          <div class="cast-stage" aria-hidden="true">
+            <div class="stage">
+              <div class="stage-float">
+                <div class="stage-window">
+                  <img class="stage-video" src="img/calder-scene.jpg" width="720" height="1080" loading="lazy" decoding="async" alt="">
+                </div>
+                <p class="stage-plate">
+                  <span class="stage-name">Calder Early</span>
+                  <span class="stage-sub">After morning skate</span>
+                </p>
+              </div>
+              <div class="stage-shadow"></div>
+            </div>
+          </div>
+
+          <!-- His profile -->
+          <div class="cast-profile">
+            <p class="cast-kicker">No.004 · First on the ice</p>
+            <h3 id="calder-name" class="cast-name">Calder Early</h3>
+            <p class="cast-meta">Age 27 · Pro hockey defenseman</p>
+            <ul class="cast-pills">
+              <li class="pill pill-rarity"><span class="pill-gem" aria-hidden="true"></span><span class="visually-hidden">Rarity: </span>Rare</li>
+              <li class="pill">
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 12L12.0 2.6M12.0 6.8l2.1 -2.1M12.0 6.8l-2.1 -2.1M12 12L3.9 7.3M7.5 9.4l-0.8 -2.9M7.5 9.4l-2.9 0.8M12 12L3.9 16.7M7.5 14.6l-2.9 -0.8M7.5 14.6l-0.8 2.9M12 12L12.0 21.4M12.0 17.2l-2.1 2.1M12.0 17.2l2.1 2.1M12 12L20.1 16.7M16.5 14.6l0.8 2.9M16.5 14.6l2.9 -0.8M12 12L20.1 7.3M16.5 9.4l2.9 0.8M16.5 9.4l0.8 -2.9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                <span class="visually-hidden">Type: </span>Ice · Dawn
+              </li>
+            </ul>
+            <p class="cast-bio">Calder is your brother's best friend and his defense partner on a pro hockey team, and he's first on the ice every morning at five. When your brother put him on wake-up duty, he gave him two rules: get you up, and hands off. He's great at one of them. He doesn't knock, either: he video-calls you from the rink, and if you decline, he'll call right back.</p>
+            <figure class="cast-quote">
+              <blockquote>
+                <p>See this compass? Your brother's got the same one. His points north... mine points at you.</p>
+              </blockquote>
+              <figcaption>Calder Early, calling from the rink</figcaption>
+            </figure>
+
+            <!-- Click-to-play wake-up clip. preload="none": nothing downloads until it's opened. -->
+            <details class="wake">
+              <summary class="btn btn-primary">
+                <svg class="wake-icon wake-icon-play" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8 5.2v13.6L19 12z" fill="currentColor"/></svg>
+                <svg class="wake-icon wake-icon-close" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6.5 6.5l11 11M17.5 6.5l-11 11" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg>
+                <span class="wake-label-closed">Hear Calder wake you up</span>
+                <span class="wake-label-open">Hide the clip</span>
+              </summary>
+              <figure class="wake-clip">
+                <video class="wake-video" src="img/calder-wake.mp4" poster="img/calder-wake-poster.jpg" width="480" height="720" controls preload="none" playsinline aria-label="Calder Early's wake-up clip" aria-describedby="calder-wake-line">
+                  <track kind="captions" src="img/calder-wake.vtt" srclang="en" label="English">
+                  Your browser can't play this video, but you can read what Calder says beside it.
+                </video>
+                <figcaption class="wake-transcript" id="calder-wake-line">
+                  <span class="wake-transcript-label">Transcript</span>
+                  <q>Morning, trouble! It's Calder on wake-up duty. Your brother's rules: get you up, and hands off. Ha! Hands off? Still undefeated... barely.</q>
+                </figcaption>
+              </figure>
+            </details>
+            <p class="wake-hint">A 13-second clip, with sound.</p>
+          </div>
+        </article>
+        <!-- ===== ...to here. ===== -->
+
         <!-- Locked cards, drawn in CSS like the app's "Coming soon" slots. Remove one each time a new character is added. -->
         <div class="cast-next">
           <div class="cast-next-copy">
             <p class="eyebrow">Up next</p>
             <h3>More Crushes are on the way</h3>
-            <p>New Crushes are in the works, guys included. Collect them all as trading cards, then pick who wakes you up on each day of the week.</p>
+            <p>New Crushes are in the works, including more guys. Collect them all as trading cards, then pick who wakes you up on each day of the week.</p>
           </div>
           <div class="cast-hand" aria-hidden="true">
-            <div class="tcard-holder"><div class="tcard tcard-locked"><div class="tcard-locked-inner"><span class="tcard-q">?</span><span class="tcard-soon">Coming soon</span></div></div></div>
             <div class="tcard-holder"><div class="tcard tcard-locked"><div class="tcard-locked-inner"><span class="tcard-q">?</span><span class="tcard-soon">Coming soon</span></div></div></div>
           </div>
         </div>
