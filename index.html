@@ -226,7 +226,7 @@
         <div class="section-head">
           <p class="eyebrow">Characters</p>
           <h2 id="cast-title">Meet the cast</h2>
-          <p class="lede">Every character in our anime alarm app is a collectible trading card with a voice, a personality, and their own way of getting you out of bed. Our first star is already on the air.</p>
+          <p class="lede">Every character in our anime alarm app is a collectible trading card with a voice, a personality, and their own way of getting you out of bed. Our first three stars are already up: a radio host, a cat-girl baker, and a shrine maiden.</p>
         </div>
 
         <!-- ===== CHARACTER: May Day (No.001). To add a character, copy from here... (see ADDING-CHARACTERS.md) ===== -->
@@ -316,6 +316,185 @@
         </article>
         <!-- ===== ...to here. ===== -->
 
+        <!-- ===== CHARACTER: Bella Biscotti (No.002). To add a character, copy from here... (see ADDING-CHARACTERS.md) ===== -->
+        <article class="cast-feature cast-feature-flip rarity-rare" style="--char-accent: #7ED9C3" aria-labelledby="bella-name">
+          <!-- Her trading card, drawn like the in-app card -->
+          <div class="cast-card">
+            <div class="tcard-holder">
+              <div class="tcard">
+                <div class="tcard-art">
+                  <img src="img/bella-card.jpg" width="600" height="838" loading="lazy" decoding="async" alt="Bella Biscotti's card art: an anime woman with a messy butter-blonde bun, tabby cat ears with a tiny silver bell earring and jade-green eyes, smiling in a white chef jacket and mint-green neckerchief in her sunlit bakery.">
+                  <p class="tcard-no"><span class="visually-hidden">Card </span>No.002</p>
+                  <span class="tcard-gem" aria-hidden="true"></span>
+                  <div class="tcard-plate">
+                    <p class="tcard-name">Bella Biscotti</p>
+                    <p class="tcard-title">Owner of Rise &amp; Purr</p>
+                    <dl class="tcard-stats">
+                      <div><dt>Cute</dt><dd>92</dd></div>
+                      <div><dt>Sass</dt><dd>25</dd></div>
+                      <div><dt>Flirt</dt><dd>80</dd></div>
+                      <div><dt>Wit</dt><dd>45</dd></div>
+                    </dl>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Her home-screen scene in a little floating "stage" (decorative).
+               IDLE LOOP TO-DO: her idle loop isn't made yet, so for now the stage shows her still scene picture.
+               Once img/bella-idle.mp4 exists (ADDING-CHARACTERS.md, step 1, command 3), replace the <img> line below
+               with this line (the same as May's), and the script at the bottom will start playing it by itself:
+               <video class="stage-video" data-idle src="img/bella-idle.mp4" poster="img/bella-scene.jpg" width="480" height="720" muted loop playsinline preload="none" disablepictureinpicture disableremoteplayback></video> -->
+          <div class="cast-stage" aria-hidden="true">
+            <div class="stage">
+              <div class="stage-float">
+                <div class="stage-window">
+                  <img class="stage-video" src="img/bella-scene.jpg" width="720" height="1080" loading="lazy" decoding="async" alt="">
+                </div>
+                <p class="stage-plate">
+                  <span class="stage-name">Bella Biscotti</span>
+                  <span class="stage-sub">Between batches</span>
+                </p>
+              </div>
+              <div class="stage-shadow"></div>
+            </div>
+          </div>
+
+          <!-- Her profile -->
+          <div class="cast-profile">
+            <p class="cast-kicker">No.002 · Fresh out of the oven</p>
+            <h3 id="bella-name" class="cast-name">Bella Biscotti</h3>
+            <p class="cast-meta">Age 24 · Baker and owner of Rise &amp; Purr</p>
+            <ul class="cast-pills">
+              <li class="pill pill-rarity"><span class="pill-gem" aria-hidden="true"></span><span class="visually-hidden">Rarity: </span>Rare</li>
+              <li class="pill">
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 20.5h16a1 1 0 0 0 1-1V14c0-2.6-1.3-4.8-3.4-6l.4-5.4-4 3.1a10 10 0 0 0-4 0L6 2.6l.4 5.4C4.3 9.2 3 11.4 3 14v5.5a1 1 0 0 0 1 1zM8.3 13a1.35 1.35 0 0 0 2.7 0h-.9a.45.45 0 0 1-.9 0zM13 13a1.35 1.35 0 0 0 2.7 0h-.9a.45.45 0 0 1-.9 0z" fill="currentColor" fill-rule="evenodd"/></svg>
+                <span class="visually-hidden">Type: </span>Hearth · Bakery
+              </li>
+            </ul>
+            <p class="cast-bio">Bella has been up since four at Rise &amp; Purr, the little corner bakery she owns in a sunny Italian hill town, and the first warm roll of every batch has your name on it. She's all cat and no act: her ears perk up at your name, she slow-blinks when she's sweet on you, and every bakery pun is flirty on purpose. Hit snooze and she won't scold you; she'll just get closer, and sweeter.</p>
+            <figure class="cast-quote">
+              <blockquote>
+                <p>Still sleepy? That's okay... I'll butter you up till you melt.</p>
+              </blockquote>
+              <figcaption>Bella Biscotti, at Rise &amp; Purr</figcaption>
+            </figure>
+
+            <!-- Click-to-play wake-up clip. preload="none": nothing downloads until it's opened. -->
+            <details class="wake">
+              <summary class="btn btn-primary">
+                <svg class="wake-icon wake-icon-play" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8 5.2v13.6L19 12z" fill="currentColor"/></svg>
+                <svg class="wake-icon wake-icon-close" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6.5 6.5l11 11M17.5 6.5l-11 11" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg>
+                <span class="wake-label-closed">Hear Bella wake you up</span>
+                <span class="wake-label-open">Hide the clip</span>
+              </summary>
+              <figure class="wake-clip">
+                <video class="wake-video" src="img/bella-wake.mp4" poster="img/bella-wake-poster.jpg" width="480" height="720" controls preload="none" playsinline aria-label="Bella Biscotti's wake-up clip" aria-describedby="bella-wake-line">
+                  <track kind="captions" src="img/bella-wake.vtt" srclang="en" label="English">
+                  Your browser can't play this video, but you can read what Bella says beside it.
+                </video>
+                <figcaption class="wake-transcript" id="bella-wake-line">
+                  <span class="wake-transcript-label">Transcript</span>
+                  <q>Ding! Order up! One sleepy loaf, fresh and warm... That's you! It's Bella, honey bun... time to rise!</q>
+                </figcaption>
+              </figure>
+            </details>
+            <p class="wake-hint">An 11-second clip, with sound.</p>
+          </div>
+        </article>
+        <!-- ===== ...to here. ===== -->
+
+        <!-- ===== CHARACTER: Kiko Hinode (No.003). To add a character, copy from here... (see ADDING-CHARACTERS.md) ===== -->
+        <article class="cast-feature rarity-rare" style="--char-accent: #E2421E" aria-labelledby="kiko-name">
+          <!-- Her trading card, drawn like the in-app card -->
+          <div class="cast-card">
+            <div class="tcard-holder">
+              <div class="tcard">
+                <div class="tcard-art">
+                  <img src="img/kiko-card.jpg" width="600" height="838" loading="lazy" decoding="async" alt="Kiko Hinode's card art: an anime woman with long, straight black hair, blunt bangs and amber eyes lined in red, wearing a small, proud smile and a white shrine maiden's robe, with cherry blossoms and a red torii gate behind her at sunrise.">
+                  <p class="tcard-no"><span class="visually-hidden">Card </span>No.003</p>
+                  <span class="tcard-gem" aria-hidden="true"></span>
+                  <div class="tcard-plate">
+                    <p class="tcard-name">Kiko Hinode</p>
+                    <p class="tcard-title">Shrine Maiden</p>
+                    <dl class="tcard-stats">
+                      <div><dt>Cute</dt><dd>74</dd></div>
+                      <div><dt>Sass</dt><dd>92</dd></div>
+                      <div><dt>Flirt</dt><dd>66</dd></div>
+                      <div><dt>Wit</dt><dd>55</dd></div>
+                    </dl>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Her home-screen scene in a little floating "stage" (decorative).
+               IDLE LOOP TO-DO: her idle loop isn't made yet, so for now the stage shows her still scene picture.
+               Once img/kiko-idle.mp4 exists (ADDING-CHARACTERS.md, step 1, command 3), replace the <img> line below
+               with this line (the same as May's), and the script at the bottom will start playing it by itself:
+               <video class="stage-video" data-idle src="img/kiko-idle.mp4" poster="img/kiko-scene.jpg" width="480" height="720" muted loop playsinline preload="none" disablepictureinpicture disableremoteplayback></video> -->
+          <div class="cast-stage" aria-hidden="true">
+            <div class="stage">
+              <div class="stage-float">
+                <div class="stage-window">
+                  <img class="stage-video" src="img/kiko-scene.jpg" width="720" height="1080" loading="lazy" decoding="async" alt="">
+                </div>
+                <p class="stage-plate">
+                  <span class="stage-name">Kiko Hinode</span>
+                  <span class="stage-sub">Tea between duties</span>
+                </p>
+              </div>
+              <div class="stage-shadow"></div>
+            </div>
+          </div>
+
+          <!-- Her profile -->
+          <div class="cast-profile">
+            <p class="cast-kicker">No.003 · Up before the sun</p>
+            <h3 id="kiko-name" class="cast-name">Kiko Hinode</h3>
+            <p class="cast-meta">Age 23 · Shrine maiden at Hinode Shrine</p>
+            <ul class="cast-pills">
+              <li class="pill pill-rarity"><span class="pill-gem" aria-hidden="true"></span><span class="visually-hidden">Rarity: </span>Rare</li>
+              <li class="pill">
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2.5 5c3.4 1.2 15.6 1.2 19 0M5 9.8h14M7.3 6.4V21M16.7 6.4V21M12 6.8v3" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+                <span class="visually-hidden">Type: </span>Shrine · Sunrise
+              </li>
+            </ul>
+            <p class="cast-bio">Kiko keeps her family's hillside shrine running: up before the sun, sweeping the steps and greeting the sunrise. Waking you up is just another shrine duty, she insists, and she is definitely not happy about it (she is). She's proud, bossy, and quick to call you an idiot, and when her shrine duties slip into accidental double meanings, she denies everything. Loudly.</p>
+            <figure class="cast-quote">
+              <blockquote>
+                <p>Hmph. I wrote your name on a wish plaque this morning... for love... For LUCK! Good luck!</p>
+              </blockquote>
+              <figcaption>Kiko Hinode, definitely not blushing</figcaption>
+            </figure>
+
+            <!-- Click-to-play wake-up clip. preload="none": nothing downloads until it's opened. -->
+            <details class="wake">
+              <summary class="btn btn-primary">
+                <svg class="wake-icon wake-icon-play" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8 5.2v13.6L19 12z" fill="currentColor"/></svg>
+                <svg class="wake-icon wake-icon-close" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6.5 6.5l11 11M17.5 6.5l-11 11" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg>
+                <span class="wake-label-closed">Hear Kiko wake you up</span>
+                <span class="wake-label-open">Hide the clip</span>
+              </summary>
+              <figure class="wake-clip">
+                <video class="wake-video" src="img/kiko-wake.mp4" poster="img/kiko-wake-poster.jpg" width="480" height="720" controls preload="none" playsinline aria-label="Kiko Hinode's wake-up clip" aria-describedby="kiko-wake-line">
+                  <track kind="captions" src="img/kiko-wake.vtt" srclang="en" label="English">
+                  Your browser can't play this video, but you can read what Kiko says beside it.
+                </video>
+                <figcaption class="wake-transcript" id="kiko-wake-line">
+                  <span class="wake-transcript-label">Transcript</span>
+                  <q>Ohayou, baka! It's Kiko... your shrine maiden, NOT your alarm clock. I just happened to be up! Okinasai!</q>
+                  <span class="wake-transcript-note"><i>Ohayou</i> is Japanese for &ldquo;good morning,&rdquo; <i>baka</i> is a fond &ldquo;idiot,&rdquo; and <i>okinasai</i> means &ldquo;wake up!&rdquo;</span>
+                </figcaption>
+              </figure>
+            </details>
+            <p class="wake-hint">An 11-second clip, with sound.</p>
+          </div>
+        </article>
+        <!-- ===== ...to here. ===== -->
+
         <!-- Locked cards, drawn in CSS like the app's "Coming soon" slots. Remove one each time a new character is added. -->
         <div class="cast-next">
           <div class="cast-next-copy">
@@ -324,8 +503,6 @@
             <p>New characters are in the works, guys included. Collect them all as trading cards, then pick who wakes you up on each day of the week.</p>
           </div>
           <div class="cast-hand" aria-hidden="true">
-            <div class="tcard-holder"><div class="tcard tcard-locked"><div class="tcard-locked-inner"><span class="tcard-q">?</span><span class="tcard-soon">Coming soon</span></div></div></div>
-            <div class="tcard-holder"><div class="tcard tcard-locked"><div class="tcard-locked-inner"><span class="tcard-q">?</span><span class="tcard-soon">Coming soon</span></div></div></div>
             <div class="tcard-holder"><div class="tcard tcard-locked"><div class="tcard-locked-inner"><span class="tcard-q">?</span><span class="tcard-soon">Coming soon</span></div></div></div>
             <div class="tcard-holder"><div class="tcard tcard-locked"><div class="tcard-locked-inner"><span class="tcard-q">?</span><span class="tcard-soon">Coming soon</span></div></div></div>
           </div>

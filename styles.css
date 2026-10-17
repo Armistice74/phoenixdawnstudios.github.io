@@ -1592,6 +1592,12 @@ p {
   font-style: italic;
 }
 
+/* An optional short note under the transcript, e.g. what her Japanese words mean */
+.wake-transcript-note {
+  display: block;
+  font-size: 0.9rem;
+}
+
 .wake-hint {
   margin: 0.8em 0 0;
   color: var(--text-muted);
@@ -1682,6 +1688,14 @@ p {
     display: none;
   }
 }
+
+/* Fewer locked cards left: keep the fan even (these beat the rules above at every size) */
+.cast-hand .tcard-holder:only-child { --tilt: 0deg; --drop: 0px; }
+.cast-hand .tcard-holder:first-child:nth-last-child(2) { --tilt: -6deg; --drop: 4px; }
+.cast-hand .tcard-holder:nth-child(2):last-child { --tilt: 6deg; --drop: 4px; }
+.cast-hand .tcard-holder:first-child:nth-last-child(3) { --tilt: -10deg; --drop: 10px; }
+.cast-hand .tcard-holder:nth-child(2):nth-last-child(2) { --tilt: 0deg; --drop: 0px; }
+.cast-hand .tcard-holder:nth-child(3):last-child { --tilt: 10deg; --drop: 10px; }
 
 /* Locked card, like the app's "Coming soon" slot */
 .tcard-locked {
