@@ -47,7 +47,7 @@
 
   <main id="main" class="doc">
 <h1>Privacy Policy</h1>
-<p class="policy-meta">Effective date: <time datetime="2026-10-16">October 16, 2026</time></p>
+<p class="policy-meta">Effective date: <time datetime="2026-10-24">October 24, 2026</time></p>
 
 <p class="lede">Phoenix Dawn Studios is building its first app: an anime alarm app for iPhone and Android, coming soon. We designed it so your information stays on your phone. This policy explains what that means in plain English: what the app stores, what it asks permission for, what happens when you buy something, and what this website does (and doesn't) do.</p>
 
@@ -167,6 +167,7 @@
     <li><strong>Your alarms:</strong> times, repeat days, any labels you type, whether each alarm is on, and snooze settings.</li>
     <li><strong>Your weekly lineup:</strong> which character wakes you up on each day of the week.</li>
     <li><strong>Your preferences,</strong> such as which character appears on the home screen and whether background music is on.</li>
+    <li><strong>Your notification choices:</strong> whether the evening reminder is on, and which upcoming packs you've asked to hear about (with their release dates, once we announce them).</li>
     <li><strong>Small bits of app memory,</strong> such as whether you've seen the welcome screen and which wake-up clip played last, so clips can take turns.</li>
     <li><strong>Once in-app purchases launch:</strong> the characters and songs you've unlocked, and how you've used any tickets.</li>
   </ul>
@@ -190,7 +191,7 @@
         <tr>
           <th scope="row">Notifications</th>
           <td>iPhone and Android</td>
-          <td>To alert you when an alarm goes off or a snooze ends. These are local notifications scheduled on your device. The app doesn't sign up for push notifications from a server. Alarm labels you type appear in these notifications, which can show on your lock screen.</td>
+          <td>To alert you when an alarm goes off or a snooze ends. The app can also send two optional reminders: an evening reminder when tomorrow's alarm has no character picked yet (you can turn it off in the app's Settings), and a one-time alert when a pack you tapped <strong>Notify me</strong> on is released. All of these are local notifications scheduled on your device. The app doesn't sign up for push notifications from a server. Alarm labels you type appear in these notifications, which can show on your lock screen.</td>
         </tr>
         <tr>
           <th scope="row">Alarms (planned)</th>
@@ -220,7 +221,7 @@
         <tr>
           <th scope="row">Network access</th>
           <td>Android</td>
-          <td>Only for the online features described in <a href="#internet">When the app goes online</a>, such as buying and restoring purchases. Alarms don't need the internet. Android grants this automatically.</td>
+          <td>Only for the online features described in <a href="#internet">When the app goes online</a>, such as buying and restoring purchases or checking our pack release calendar after you tap <strong>Notify me</strong>. Alarms don't need the internet. Android grants this automatically.</td>
         </tr>
       </tbody>
     </table>
@@ -232,6 +233,8 @@
   <h2 id="internet">5. When the app goes online</h2>
   <p>Your alarms are scheduled on your device. They don't need an internet connection or any server of ours to ring, and we don't run app servers that collect your information.</p>
   <p>The app goes online only for specific features, such as buying or restoring purchases and, if we offer it, downloading extra content you've unlocked. Any internet connection shares some basic information. The services involved (for example Apple, Google, a purchase-management service, or a content-delivery host) receive your device's IP address and the basic technical details needed to answer the request. We don't use this information to identify you or build a profile of you.</p>
+  <h3 id="release-calendar">Pack release calendar</h3>
+  <p>If you tap <strong>Notify me</strong> on an upcoming pack, the app occasionally downloads a small public file from this website that lists pack release dates (<code>phoenixdawnstudios.com/app/packs.json</code>), so it can schedule the release alert on your phone. It checks only while you're waiting for a pack that hasn't come out yet, and at most every few hours. The request doesn't include your name, an account, a device ID, or which packs you follow; it's an ordinary web request, recorded in our web host's standard server logs like any visit to this site (see <a href="#website">This website</a>). If you never tap Notify me, the app never makes this request.</p>
 </section>
 
 <section>
