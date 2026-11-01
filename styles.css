@@ -1831,6 +1831,95 @@ p {
   color: var(--text-muted);
 }
 
+/* Our apps (studio home): one tile per app; a new app is one more <li class="card app-tile">.
+   The tiles keep one width and line up under the heading, three to a row on a wide screen. */
+.apps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
+  justify-content: start;
+  gap: 18px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.app-tile {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  border-color: var(--border-strong);
+  background:
+    radial-gradient(18rem 12rem at 100% 0%, rgba(123, 75, 214, 0.18), transparent 70%),
+    var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.app-tile-head {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* The app's own icon, with iOS-like corners at this size */
+.app-tile-icon {
+  flex: none;
+  width: 72px;
+  height: 72px;
+  border-radius: 18px;
+  box-shadow: 0 10px 24px -12px rgba(0, 0, 0, 0.7), 0 0 0 1px var(--border);
+}
+
+.app-tile h3 {
+  margin: 0 0 6px;
+  font-size: 1.4rem;
+}
+
+.app-tile-name {
+  color: var(--heading);
+  text-decoration: none;
+}
+
+.app-tile-name:hover {
+  color: var(--link-hover);
+}
+
+.app-tile .app-tile-status {
+  margin: 0;
+  font-size: 0.78rem;
+}
+
+.app-tile > p {
+  margin: 0;
+  color: var(--text-muted);
+}
+
+/* Pinned to the tile's bottom, so the buttons line up when descriptions differ in length */
+.app-tile-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 20px;
+  margin-top: auto;
+}
+
+.app-tile-legal {
+  display: flex;
+  gap: 14px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0.92rem;
+}
+
+/* An app's own page (/<app-slug>/) opens on its app card, with its name as the page's h1 */
+.app-page-top {
+  padding-top: clamp(40px, 6vw, 72px);
+}
+
+.app-copy h1 {
+  font-size: clamp(2.2rem, 1.4rem + 3vw, 3.2rem);
+}
+
 /* ---------- 7. Footer ---------- */
 
 .site-footer {
@@ -2088,6 +2177,54 @@ p {
 
 .doc blockquote > :last-child {
   margin-bottom: 0;
+}
+
+/* Hub pages (privacy, terms, support and 特商法 at the site root): one link card per app */
+.doc .hub-list {
+  display: grid;
+  gap: 12px;
+  margin: 1.4em 0 2.4em;
+  padding: 0;
+  list-style: none;
+}
+
+.doc .hub-list li {
+  margin: 0;
+  padding: 0;
+}
+
+.doc .hub-link {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 18px 22px;
+  border: 1px solid var(--chip-border);
+  border-radius: var(--radius);
+  background:
+    linear-gradient(135deg, rgba(245, 197, 66, 0.08), rgba(123, 75, 214, 0.1)),
+    var(--surface);
+  color: var(--heading);
+  text-decoration: none;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.doc .hub-link:hover {
+  border-color: var(--gold);
+  transform: translateY(-1px);
+}
+
+.doc .hub-link strong {
+  font-size: 1.15rem;
+}
+
+.doc .hub-link strong::after {
+  content: " \2192";
+  color: var(--accent-text);
+}
+
+.doc .hub-link span {
+  color: var(--text-muted);
+  font-size: 0.95rem;
 }
 
 /* Tables */
