@@ -47,7 +47,7 @@
 
   <main id="main" class="doc">
 <h1>Privacy Policy</h1>
-<p class="policy-meta">Effective date: <time datetime="2026-10-31">October 31, 2026</time></p>
+<p class="policy-meta">Effective date: <time datetime="2026-11-03">November 3, 2026</time></p>
 
 <p class="lede">This policy explains what <strong>Snooze Crush</strong> (おはよう推し in Japanese), our alarm app for iPhone, and this website do with information about you: what stays on your iPhone, what the app sends, who receives it, why, and for how long. We've written it in plain English and tried to leave nothing out.</p>
 
@@ -191,7 +191,7 @@
   <ul>
     <li>your purchase ID, described above;</li>
     <li>your <strong>purchase history</strong> for Snooze Crush from the App Store: which products, prices and currency, dates, App Store transaction numbers, your App Store country, and whether a purchase was refunded;</li>
-    <li><strong>technical details</strong> needed to answer the app, such as the app's version, your iOS version, your language and region settings, and your IP address (which any internet connection shares). RevenueCat's software also sends the identifier iOS gives the app for your iPhone (Apple calls it the &ldquo;identifier for vendor&rdquo;).</li>
+    <li><strong>technical details</strong> needed to answer the app, such as the app's version, your iOS version, your language and region settings, and your IP address (which any internet connection shares). RevenueCat's software also sends the identifier iOS gives the app for your iPhone (Apple calls it the &ldquo;identifier for vendor&rdquo;). RevenueCat uses your IP address to work out which country you're in, then drops the address and keeps only the country, which can show up in our sales-by-country dashboards.</li>
   </ul>
   <h3 id="purchase-uses">How we use it</h3>
   <ul>
@@ -281,12 +281,12 @@
       </tbody>
     </table>
   </div>
-  <p><strong>What the app doesn't ask for:</strong> your camera, microphone, location, contacts, photos, calendar, or health data, or permission to track you (App Tracking Transparency). The app doesn't access any of these.</p>
+  <p><strong>What the app doesn't ask for:</strong> your camera, microphone, location, contacts, photos, calendar, or health data, or permission to track you (App Tracking Transparency). The app doesn't access any of these. (The &ldquo;Coarse Location&rdquo; on Apple's privacy label is only the country RevenueCat works out from your IP address; see <a href="#purchases">Purchases and RevenueCat</a>.)</p>
 </section>
 
 <section>
   <h2 id="analytics">11. Analytics and what Apple tells us</h2>
-  <p>The app has no analytics, advertising, or crash-reporting tools of its own. We do use <strong>RevenueCat's purchase dashboards</strong> for business analytics: they're built from the purchase records described in <a href="#purchases">Purchases and RevenueCat</a> and show us things like sales, refunds, and how many customers buy each product. That's why Apple's privacy label for Snooze Crush lists your purchase ID and purchase history as used for &ldquo;Analytics&rdquo; as well as for the app's functions.</p>
+  <p>The app has no analytics, advertising, or crash-reporting tools of its own. We do use <strong>RevenueCat's purchase dashboards</strong> for business analytics: they're built from the purchase records described in <a href="#purchases">Purchases and RevenueCat</a> and show us things like sales, refunds, and how many customers buy each product. That's why Apple's privacy label for Snooze Crush lists your purchase ID (&ldquo;User ID&rdquo;), your purchase history, the identifier iOS gives the app for your iPhone (&ldquo;Device ID&rdquo;) and the country RevenueCat works out from your IP address (&ldquo;Coarse Location&rdquo;) as used for &ldquo;Analytics&rdquo; as well as for the app's functions.</p>
   <p>Apple also gives us App Store statistics, such as downloads and sales. If you've chosen in your iPhone's settings to share analytics with app developers, Apple may also give us usage statistics and crash reports. Apple de-identifies these, and we use them only to find and fix problems. You can turn this sharing off in Settings &rsaquo; Privacy &amp; Security &rsaquo; Analytics &amp; Improvements.</p>
 </section>
 
@@ -422,7 +422,8 @@
     <li><strong>Categories we collect:</strong>
       <ul>
         <li>identifiers: your purchase ID and the identifier iOS gives the app for your iPhone (through RevenueCat), your IP address (through RevenueCat, our download server, and our web host, as described above), and your email address if you write to us;</li>
-        <li>commercial information: your Snooze Crush purchase history; and</li>
+        <li>commercial information: your Snooze Crush purchase history;</li>
+        <li>geolocation data: only your country, which RevenueCat works out from your IP address; and</li>
         <li>device and app information you choose to send in a Help report.</li>
       </ul>
     </li>
@@ -476,7 +477,7 @@
         <tbody>
           <tr>
             <th scope="row">RevenueCat, Inc.（米国）</th>
-            <td>利用者ID（Apple が発行する ID から作成した符号）、購入履歴、Apple の取引情報、アプリと iOS のバージョンなどの技術情報、iOS がアプリに割り当てる端末の識別子、IP アドレス</td>
+            <td>利用者ID（Apple が発行する ID から作成した符号）、購入履歴、Apple の取引情報、アプリと iOS のバージョンなどの技術情報、iOS がアプリに割り当てる端末の識別子、IP アドレス（RevenueCat は国の判定にだけ使い、判定後は破棄して国のみを保存します）</td>
             <td>購入の確認と復元、売上の集計</td>
             <td>アプリを開いたときやアプリに戻ったとき、購入・復元のとき</td>
           </tr>
