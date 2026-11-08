@@ -47,8 +47,10 @@
   </header>
 
   <main id="main" class="doc">
-<!-- Written for the first App Store version. Re-read it against the exact build before every submission: every data
-     flow, the purchase service, the age check and the optional features must match what ships. -->
+<!-- Written for the first App Store version: all ages (App Store 4+, Override = Not Applicable), the unlock through
+     Apple's StoreKit on the device with no purchase service, links opening in the Safari app, and a Declared Age Range
+     check that blocks nobody. Re-read it against the exact build before every submission: every data flow, the
+     purchase code, the age check, the PDF reader's code library and the optional features must match what ships. -->
 <h1>Privacy Policy</h1>
 <p class="policy-meta">Effective date: <time datetime="2026-11-08">November 8, 2026</time></p>
 
@@ -59,10 +61,11 @@
   <ul>
     <li><strong>No sign-up.</strong> You never create an account with us.</li>
     <li><strong>Your cases stay on your device.</strong> Everything you pin to a board, from photos and files to notes, links, recordings and strings, is saved on your iPhone or iPad. We can't see it, and it's never sent to us.</li>
-    <li><strong>The app goes online for a few clear reasons:</strong> our purchase service, RevenueCat; the websites you add as links, to show their preview, and the pages you open; a free PDF reader's code, from a public code library, when you add a PDF; and emails, only when you choose to send one.</li>
-    <li><strong>No ads, no tracking, and we never sell your information.</strong> We use RevenueCat's purchase dashboards to understand our sales, and that's all.</li>
-    <li><strong>Apple handles payments.</strong> We never see your card or bank details.</li>
-    <li><strong>For ages 13 and up.</strong> Where the law calls for it, the app checks your age range on your device. The result is never stored or sent.</li>
+    <li><strong>The app collects no personal data, and sends nothing to us.</strong> The only personal information we get is what you choose to send us, such as an email.</li>
+    <li><strong>The app goes online only for a few clear reasons, and never to us:</strong> the websites you add as links, to show their preview; a free PDF reader's code, from a public code library, when you add a PDF; Apple's App Store, to check, buy or restore the unlock; and your own iCloud, if you turn it on in a version that has it. A link you tap opens in the Safari app.</li>
+    <li><strong>No ads, no tracking, and we never sell your information.</strong> The app has no analytics or crash-reporting tools.</li>
+    <li><strong>Apple handles payments.</strong> We never see your card or bank details, and the app tells us nothing about your purchase.</li>
+    <li><strong>No minimum age.</strong> Where the law calls for it, the app checks your age range on your device. It doesn't stop anyone from using the app, and the result is never stored or sent.</li>
     <li><strong>Our website uses no cookies and no analytics</strong> (see <a href="../privacy.html#website">This website</a>).</li>
   </ul>
 </section>
@@ -73,7 +76,7 @@
     <li><a href="#who-we-are">Who we are</a></li>
     <li><a href="#overview">Everything in one table</a></li>
     <li><a href="#on-your-device">What stays on your device</a></li>
-    <li><a href="#purchases">Purchases and RevenueCat</a></li>
+    <li><a href="#purchases">Purchases</a></li>
     <li><a href="#links">Web links</a></li>
     <li><a href="#pdfs">Reading PDFs</a></li>
     <li><a href="#emails">Suggestions and emails</a></li>
@@ -98,7 +101,7 @@
 <section>
   <h2 id="who-we-are">1. Who we are</h2>
   <p>&ldquo;Phoenix Dawn Studios,&rdquo; &ldquo;we,&rdquo; &ldquo;us,&rdquo; and &ldquo;our&rdquo; mean <strong>Phoenix Dawn Studios LLC</strong>, a Michigan limited liability company in the United States. We make Conspiracy Tracker. We decide how the information described here is used, so we're its &ldquo;controller&rdquo; under laws like the GDPR.</p>
-  <p>This policy covers Conspiracy Tracker and emails you send us about it. Our website, phoenixdawnstudios.com, is covered in <a href="../privacy.html#website">This website</a>. This policy doesn't cover services run by other companies, such as Apple's App Store, iCloud, your mail app, or the websites you save in the app. Those have their own privacy policies.</p>
+  <p>This policy covers Conspiracy Tracker and the emails and other messages you send us about it. Our website, phoenixdawnstudios.com, is covered in <a href="../privacy.html#website">This website</a>. This policy doesn't cover services run by other companies, such as Apple's App Store, iCloud, your mail app, or the websites you save in the app. Those have their own privacy policies.</p>
   <p>Questions about privacy? Contact us using the details in <a href="#contact">Contact us</a>.</p>
 </section>
 
@@ -124,15 +127,15 @@
           <td>Until you delete it or the app</td>
         </tr>
         <tr>
-          <th scope="row">Your customer ID, purchase history, and basic technical details</th>
-          <td>RevenueCat, our purchase service, when the app opens or you come back to it, and when you buy or restore</td>
-          <td>To confirm and restore your purchase, and to understand our sales</td>
-          <td>While it may be needed to restore your purchase; deleted within 30 days of a verified request</td>
+          <th scope="row">Your purchase of the unlock</th>
+          <td>Between your device and Apple's App Store, through Apple's StoreKit</td>
+          <td>To unlock unlimited cases, and to restore the unlock</td>
+          <td>Under Apple's policy. The app sends us nothing; Apple's sales reports don't name you.</td>
         </tr>
         <tr>
-          <th scope="row">An ordinary web request (your IP address) for a page you add as a link, or open</th>
+          <th scope="row">An ordinary web request (your IP address) for a page you add as a link</th>
           <td>That website, directly from your device</td>
-          <td>To show the link's title and preview picture, and the page itself</td>
+          <td>To show the link's title, short description, and preview picture</td>
           <td>Under that website's own policy; nothing reaches us</td>
         </tr>
         <tr>
@@ -142,22 +145,28 @@
           <td>Under those services' own policies; your PDF itself never leaves your device</td>
         </tr>
         <tr>
-          <th scope="row">Suggestions and other emails you choose to send</th>
-          <td>Our email: forwarded by Porkbun to a Gmail mailbox</td>
+          <th scope="row">Suggestions, emails, and other messages you choose to send (by phone, text or post too)</th>
+          <td>Emails: forwarded by Porkbun to a Gmail mailbox. Calls, texts and voicemails: our Google Voice line</td>
           <td>To answer you and improve the app</td>
           <td>Up to 3 years after our last exchange</td>
         </tr>
         <tr>
-          <th scope="row">Face ID</th>
+          <th scope="row">Face ID or Touch ID</th>
           <td>Never reaches the app; handled by your device</td>
           <td>To open a case you've locked</td>
           <td>The app only learns whether it worked</td>
         </tr>
         <tr>
-          <th scope="row">Your age range</th>
+          <th scope="row">Your age range, where the law calls for it</th>
           <td>Never leaves your device</td>
-          <td>To check the app is for you</td>
+          <td>To follow those laws; it doesn't stop anyone from using the app</td>
           <td>Never stored</td>
+        </tr>
+        <tr>
+          <th scope="row">Sales reports, and (only if you share analytics with developers) usage statistics and crash reports</th>
+          <td>From Apple to us; they don't name you</td>
+          <td>Accounting and taxes; finding and fixing problems</td>
+          <td>Sales and financial reports: 7 years</td>
         </tr>
         <tr>
           <th scope="row">Payment card and bank details</th>
@@ -186,50 +195,36 @@
 </section>
 
 <section>
-  <h2 id="purchases">4. Purchases and RevenueCat</h2>
-  <p>Conspiracy Tracker is free to download, and a one-time purchase unlocks unlimited cases. The app uses <strong>RevenueCat, Inc.</strong>, a company in the United States, to handle that purchase. The app connects to RevenueCat when it opens, when you come back to it, and when you buy or restore, even if you never buy anything. That's how it knows whether your Apple Account has unlocked the app, on every device you use.</p>
-  <h3 id="purchase-data">What RevenueCat receives</h3>
-  <ul>
-    <li>a <strong>customer ID</strong> for the app. It isn't your name, your email, or your Apple Account login. But it's linked to your purchase records, so we treat it as personal information;</li>
-    <li>your <strong>purchase history</strong> for Conspiracy Tracker from the App Store: which product, the price and currency, dates, App Store transaction numbers, your App Store country, and whether a purchase was refunded; and</li>
-    <li><strong>technical details</strong> needed to answer the app, such as the app's version, your iOS or iPadOS version, your language and region settings, and your IP address (which any internet connection shares). RevenueCat's software also sends the identifier iOS gives the app for your device (Apple calls it the &ldquo;identifier for vendor&rdquo;). RevenueCat uses your IP address to work out which country you're in, then keeps only the country, which can show up in our sales-by-country dashboards.</li>
-  </ul>
-  <p>RevenueCat never receives your cases or anything you've pinned to them.</p>
-  <h3 id="purchase-uses">How we use it</h3>
-  <ul>
-    <li>to confirm your purchase is genuine, unlock unlimited cases, and return the app to its free limits if Apple refunds the purchase;</li>
-    <li>to give you the unlock on every device you use with that Apple Account, and when you restore;</li>
-    <li>to understand our business through RevenueCat's purchase dashboards, for example how many people buy and from which countries (see <a href="#analytics">Analytics</a>); and</li>
-    <li>to answer you if you write to us about a purchase.</li>
-  </ul>
-  <p>We don't use it for advertising, we don't track you across other companies' apps or websites, we don't combine it with other companies' data, and we never sell it.</p>
+  <h2 id="purchases">4. Purchases</h2>
+  <p>Conspiracy Tracker is free to download, and free to use with one case at a time, with one case folder in it. A one-time purchase through the App Store unlocks unlimited cases and folders.</p>
+  <p>The purchase is between you and Apple. The app uses Apple's <strong>StoreKit</strong>, on your device, to ask the App Store whether your Apple Account has bought the unlock, and to restore it on your other devices. <strong>The app sends nothing about your purchase to us, or to any company other than Apple</strong>, and it doesn't use any other purchase service. If Apple refunds the unlock, the app goes back to the free limits, and your cases and folders stay.</p>
   <h3 id="apple-purchases">What Apple does</h3>
-  <p>You make the purchase through the App Store with your Apple Account. Apple processes your payment, keeps your purchase history, and handles refunds, under <a href="https://www.apple.com/legal/privacy/">Apple's Privacy Policy</a>. Apple sends us sales and financial reports, which we use for accounting and taxes; they don't include your name or contact details. If you send us the Order ID from your App Store receipt, we can find your purchase records at RevenueCat by it, for example to help with a problem or a deletion request.</p>
+  <p>You make the purchase through the App Store with your Apple Account. Apple processes your payment, keeps your purchase history, and handles refunds and Ask to Buy, under <a href="https://www.apple.com/legal/privacy/">Apple's Privacy Policy</a>. Apple sends us sales and financial reports, which we use for accounting and taxes; they don't include your name or contact details. If you write to us about a purchase, we know only what you tell us.</p>
 </section>
 
 <section>
   <h2 id="links">5. Web links</h2>
   <ul>
-    <li><strong>Adding a link.</strong> When you add a web link to a board, your device asks that website for the page, once, to read its title, short description, and preview picture, and then downloads the picture. The request goes straight from your device to that website, not through us. Like any visit, the website sees your IP address and that the page was requested. If you'd rather a website not get that request, write the address on a note instead.</li>
-    <li><strong>Opening a link.</strong> Tapping a link opens the page in a browser view inside the app, which Apple provides. What you do there is between you and that website, under its own privacy policy. The app can't see what you browse.</li>
+    <li><strong>Adding a link.</strong> When you add a web link to a board, your device asks that website for the page, once, to read its title, short description, and preview picture, and then downloads the picture from wherever the page says it's kept (sometimes another website). The requests go straight from your device to those websites, not through us. Like any visit, each website sees your IP address, what was requested, and that the request came from Conspiracy Tracker. A website can also leave a cookie in the app, as it would in a browser, and see it again the next time you add one of its pages. The picture is saved on your device, with the card. If you'd rather a website not get that request, write the address on a note instead.</li>
+    <li><strong>Opening a link.</strong> Tapping <strong>Open</strong> on a link card opens the page in the <strong>Safari app</strong>, outside Conspiracy Tracker (only web addresses open). What you do there is between you, Safari, and that website, under their own privacy policies. The app can't see what you browse.</li>
   </ul>
 </section>
 
 <section>
   <h2 id="pdfs">6. Reading PDFs</h2>
-  <p>When you add a PDF, the app reads its pages on your device, to show them on the card and to let you search and highlight their words. To do that, it uses <strong>pdf.js</strong>, a free, open-source PDF reader. The app loads the reader's code from a public code library, <strong>cdnjs</strong> (run by Cloudflare, Inc.), or <strong>jsDelivr</strong> if cdnjs doesn't answer. It also loads fonts and character maps from jsDelivr when a PDF needs them. These are ordinary web requests: the library sees your IP address and which version of the reader was requested, like any website.</p>
+  <p>When you add a PDF, the app reads its pages on your device, to show them on the card and to let you search and highlight their words. To do that, it uses <strong>pdf.js</strong>, a free, open-source PDF reader. The app loads the reader's code from a public code library, <strong>cdnjs</strong> (run by Cloudflare, Inc.), or <strong>jsDelivr</strong> if cdnjs doesn't answer. It also loads fonts and character maps from jsDelivr when a PDF needs them. These are ordinary web requests: the library sees your IP address and which version of the reader was requested, like any website. They're used only to deliver the reader to your device. The app adds no ID to them and none of your PDF's content. At most, the font and character-map files a PDF needs show the library which kind of lettering it uses, such as Japanese. What the libraries do with their own logs is up to them, under Cloudflare's and jsDelivr's own policies.</p>
   <p><strong>Your PDF itself never leaves your device.</strong> It's handed to the reader on your device, and nothing about it is sent anywhere.</p>
 </section>
 
 <section>
   <h2 id="emails">7. Suggestions and emails</h2>
   <p>In the app's <strong>Help</strong>, <strong>Send a suggestion</strong> opens a new, empty email to <strong>suggestions@phoenixdawnstudios.com</strong> in your mail app. <strong>Nothing is sent unless you send it</strong>, and the app adds nothing to it: no case, no device details, no ID. When you send it, or any other email to us, we receive your email address, the name your email shows, and whatever you write or attach. Please don't attach anything from a case you'd rather keep private.</p>
-  <p>Email to our addresses is forwarded by our domain registrar, <strong>Porkbun</strong>, to a mailbox we keep with <strong>Google (Gmail)</strong>. We use emails only to answer you, fix problems, improve the app, and keep ordinary business records. We won't add you to a mailing list unless you ask. Please don't send sensitive information, such as payment card numbers, by email.</p>
+  <p>Email to our addresses is forwarded by our domain registrar, <strong>Porkbun</strong>, to a mailbox we keep with <strong>Google (Gmail)</strong>. Calls, texts and voicemails to our phone line come through <strong>Google Voice</strong>, which shows us your phone number. We use emails and other messages only to answer you, fix problems, improve the app, and keep ordinary business records. We won't add you to a mailing list unless you ask. Please don't send sensitive information, such as payment card numbers, by email.</p>
 </section>
 
 <section>
   <h2 id="locks">8. Face ID and case locks</h2>
-  <p>When you lock a case, your device's own <strong>Face ID</strong> (or its passcode) opens it. Face ID is handled entirely by your device: the app never sees your face, your face data, or your passcode. It only learns whether you were recognized. Locked cases are stored on your device like any other case; the lock keeps them closed inside the app.</p>
+  <p>When you lock a case, your device's own <strong>Face ID</strong> or <strong>Touch ID</strong> (or its passcode) opens it. Face ID and Touch ID are handled entirely by your device: the app never sees your face, your fingerprint, their data, or your passcode. It only learns whether you were recognized. Locked cases are stored on your device like any other case; the lock keeps them closed inside the app.</p>
 </section>
 
 <section>
@@ -245,8 +240,9 @@
 
 <section>
   <h2 id="age-check">10. The age check</h2>
-  <p>Conspiracy Tracker is for ages 13 and up. Where the law calls for it, the app asks your device which <strong>age range</strong> you're in, using Apple's Declared Age Range feature. Apple decides what to share, based on your Apple Account and the choices you or your parent make, and the app learns only a range, never your birthday.</p>
-  <p>If the range shows you're <strong>under 13</strong>, the app stops at a notice that it's for ages 13 and up, and doesn't connect to RevenueCat. The check runs on your device. The age range is kept only in the app's memory while it's open. It's <strong>never saved, and never sent</strong> to us or anyone else.</p>
+  <p>Conspiracy Tracker has no minimum age, and <strong>the age check never stops anyone from using it.</strong> Some laws (today, in some U.S. states) ask apps to check users' ages through the App Store. Where the law calls for it, the app asks your device which <strong>age range</strong> you're in, using Apple's Declared Age Range feature. Apple decides what to share, based on your Apple Account and the choices you or your parent make, and the app learns only a range, never your birthday.</p>
+  <p>The app uses the answer only to follow those laws. It works the same for every age, and if you choose not to share your age range, it carries on as normal. The check runs on your device. The age range is kept only in the app's memory while it's open. It's <strong>never saved, and never sent</strong> to us or anyone else.</p>
+  <p>Where the law calls for it, Apple asks a parent or guardian to approve a minor's downloads and in-app purchases, and we rely on that approval.</p>
 </section>
 
 <section>
@@ -286,13 +282,13 @@
 
 <section>
   <h2 id="analytics">12. Analytics and what Apple tells us</h2>
-  <p>The app has no analytics, advertising, or crash-reporting tools of its own. We do use <strong>RevenueCat's purchase dashboards</strong> for business analytics: they're built from the purchase records described in <a href="#purchases">Purchases and RevenueCat</a> and show us things like sales, refunds, and how many customers buy. That's why Apple's privacy label for Conspiracy Tracker lists your customer ID (&ldquo;User ID&rdquo;), your purchase history, the identifier iOS gives the app for your device (&ldquo;Device ID&rdquo;) and the country RevenueCat works out from your IP address (&ldquo;Coarse Location&rdquo;) as used for &ldquo;Analytics&rdquo; as well as for the app's functions.</p>
+  <p>The app has no analytics, advertising, or crash-reporting tools of its own, and no purchase service (see <a href="#purchases">Purchases</a>). It sends us nothing about you or how you use it.</p>
   <p>Apple also gives us App Store statistics, such as downloads and sales. If you've chosen in your device's settings to share analytics with app developers, Apple may also give us usage statistics and crash reports. Apple de-identifies these, and we use them only to find and fix problems. You can turn this sharing off in Settings &rsaquo; Privacy &amp; Security &rsaquo; Analytics &amp; Improvements.</p>
 </section>
 
 <section>
   <h2 id="providers">13. Who we share information with</h2>
-  <p>We don't sell personal information, we don't share it for targeted advertising, and we don't give it to data brokers. These companies handle information for us, only to provide their services to us:</p>
+  <p>We don't sell personal information, we don't share it for targeted advertising, and we don't give it to data brokers. The only personal information we receive is what you choose to send us: an email, or a call, text, voicemail or letter. These companies handle it for us, only to provide their services to us:</p>
   <div class="table-wrap" role="region" aria-labelledby="providers-caption" tabindex="0">
     <table>
       <caption id="providers-caption">Our service providers, what they do, and how transfers are protected</caption>
@@ -306,27 +302,21 @@
       </thead>
       <tbody>
         <tr>
-          <th scope="row">RevenueCat, Inc.</th>
-          <td>Our purchase service: confirms and restores purchases, keeps customer records, and provides purchase dashboards</td>
-          <td>United States</td>
-          <td>RevenueCat's data processing agreement, which includes the EU Standard Contractual Clauses</td>
-        </tr>
-        <tr>
           <th scope="row">Porkbun LLC</th>
           <td>Our domain registrar; forwards emails sent to our addresses</td>
           <td>United States</td>
           <td>Sending your email to us in the U.S. is needed to deliver and answer it</td>
         </tr>
         <tr>
-          <th scope="row">Google LLC (Gmail)</th>
-          <td>Stores the emails we receive</td>
+          <th scope="row">Google LLC (Gmail and Google Voice)</th>
+          <td>Stores the emails we receive, and carries calls, texts and voicemails to our phone line</td>
           <td>United States</td>
           <td>Google is certified under the EU&ndash;U.S. Data Privacy Framework</td>
         </tr>
       </tbody>
     </table>
   </div>
-  <p><strong>Apple</strong> runs the App Store, processes payments and refunds, provides Face ID, the age range, and iCloud, and provides the browser view links open in. Apple does this as an independent company under its own <a href="https://www.apple.com/legal/privacy/">privacy policy</a>, not as our service provider.</p>
+  <p><strong>Apple</strong> runs the App Store, processes payments and refunds, tells the app on your device whether you've bought the unlock (StoreKit), provides Face ID and Touch ID, the age range, and iCloud, and makes the Safari app, where links open. Apple does this as an independent company under its own <a href="https://www.apple.com/legal/privacy/">privacy policy</a>, not as our service provider.</p>
   <p><strong>Websites you add as links, and the code libraries the PDF reader comes from</strong> (cdnjs and jsDelivr), receive ordinary web requests straight from your device, as described in <a href="#links">Web links</a> and <a href="#pdfs">Reading PDFs</a>. They aren't our service providers, and we receive nothing from them.</p>
   <p>We may also share information if the law requires it (for example, a valid court order), to protect the rights, safety, and property of our users, the public, or us, including to prevent fraud, or as part of a merger, acquisition, or sale of assets, in which case we'll require the new owner to respect this policy.</p>
 </section>
@@ -335,8 +325,7 @@
   <h2 id="retention">14. How long we keep information</h2>
   <ul>
     <li><strong>On your device:</strong> until you delete it in the app or delete the app. Copies may remain in your own device backups and backup files until those are replaced or deleted.</li>
-    <li><strong>Your RevenueCat record</strong> (customer ID, purchase history, technical details): for as long as it may be needed to give you back your purchase. The app can't tell us when you've stopped using it, so in practice we keep it until you ask us to delete it, or until we stop using RevenueCat. We delete it within 30 days of a verified request (see <a href="#delete-data">Deleting your information</a>).</li>
-    <li><strong>Suggestions and other emails:</strong> up to 3 years after our last exchange, then deleted. We delete them sooner if you ask, unless we need them for a legal claim.</li>
+    <li><strong>Suggestions, emails and other messages:</strong> up to 3 years after our last exchange, then deleted. We delete them sooner if you ask, unless we need them for a legal claim. If we learn an email came from a child under 13, we delete it promptly after we've replied (see <a href="#children">Children and teens</a>).</li>
     <li><strong>Apple's sales and financial reports:</strong> 7 years, for tax and accounting. They don't include your name or contact details.</li>
     <li><strong>Your age range:</strong> never stored.</li>
   </ul>
@@ -346,17 +335,17 @@
   <h2 id="delete-data">15. Deleting your information</h2>
   <ul>
     <li><strong>On your device:</strong> delete a case in the app (press and hold it on the shelf), or delete the app to remove everything it stores. (&ldquo;Offload App&rdquo; keeps your data, so choose &ldquo;Delete App&rdquo; to remove it.) Delete any backup files you've saved, too.</li>
-    <li><strong>Your RevenueCat record:</strong> email <a href="mailto:hello@phoenixdawnstudios.com?subject=Delete%20my%20data">hello@phoenixdawnstudios.com</a> with the <strong>Order ID</strong> from your Conspiracy Tracker receipt (in Apple's receipt email, or at <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a>). We'll find your record by it and delete it within 30 days. If you've never bought anything, there's no Order ID to find it by, and the record holds only your customer ID and technical details, with nothing that names you.</li>
-    <li><strong>Emails:</strong> ask us, and we'll delete your emails.</li>
+    <li><strong>Emails and other messages:</strong> email <a href="mailto:hello@phoenixdawnstudios.com?subject=Delete%20my%20data">hello@phoenixdawnstudios.com</a>, and we'll delete them.</li>
   </ul>
-  <p><strong>Please note:</strong> deleting your RevenueCat record doesn't cancel or refund your purchase, which stays with your Apple Account. The next time you restore your purchase, or open the app on a device signed in to that Apple Account, a new record may be created so the app can give you the unlock again. To keep it from coming back, delete the app from your devices before you ask us.</p>
+  <p>That's everything: the app sends us nothing, so we hold no other record of you to delete.</p>
   <p>Your purchase history kept by Apple is Apple's to manage. Contact Apple about it.</p>
 </section>
 
 <section>
   <h2 id="children">16. Children and teens</h2>
-  <p>Conspiracy Tracker is for ages <strong>13 and up</strong>, as our <a href="terms.html">Terms of Use</a> say, and it isn't directed to children. We don't knowingly collect personal information from children under 13. Where the law calls for it, the app's on-device <a href="#age-check">age check</a> stops users under 13 before the app connects to RevenueCat, and the age range is never stored or sent.</p>
-  <p>If you believe a child under 13 has sent us personal information, for example by email, contact us and we'll delete it.</p>
+  <p>Conspiracy Tracker is a general-audience app, made for people who follow true crime and do their own research. It has <strong>no minimum age</strong>, as our <a href="terms.html">Terms of Use</a> say, but it isn't directed to children.</p>
+  <p><strong>Apart from an email you choose to send us, the app doesn't collect personal information from anyone, including children.</strong> There's no account, no ads, and no analytics, your cases never reach us, and a purchase is between you and Apple. Where the law calls for it, the app's on-device <a href="#age-check">age check</a> asks Apple for your age range, but it doesn't stop anyone from using the app, and the age range is never stored or sent. Where the law calls for it, Apple asks a parent or guardian to approve a minor's downloads and purchases.</p>
+  <p>If you're under 13, please ask a parent or guardian before you email us. If we learn an email came from a child under 13, we'll use it only to answer that one message, we won't share it, and we'll delete it promptly after replying. Parents and guardians can ask us to delete a child's email at any time, and we will.</p>
 </section>
 
 <section>
@@ -367,8 +356,8 @@
     <li>to correct it or delete it; and</li>
     <li>to stop using it for a particular purpose.</li>
   </ul>
-  <p>To make a request, email <a href="mailto:hello@phoenixdawnstudios.com?subject=Privacy%20request">hello@phoenixdawnstudios.com</a>. To find your purchase records, we'll need the Order ID from your receipt; we won't ask for more than we need to confirm a request is genuine. We'll respond <strong>within 10 days</strong>, and there's no charge. Where the law allows, you can use an authorized agent to make a request for you. We won't treat you differently for using your rights. If we turn down your request, you can ask us to reconsider by replying to our decision.</p>
-  <p>We hold nothing from your cases, so there's nothing of them for us to send, correct, or delete: you control them in the app. You can also withdraw a permission, or stop sharing analytics with developers, at any time in your device's Settings.</p>
+  <p>To make a request, email <a href="mailto:hello@phoenixdawnstudios.com?subject=Privacy%20request">hello@phoenixdawnstudios.com</a>. We won't ask for more than we need to confirm a request is genuine. We'll respond <strong>within 10 days</strong>, and there's no charge. Where the law allows, you can use an authorized agent to make a request for you. We won't treat you differently for using your rights. If we turn down your request, you can ask us to reconsider by replying to our decision.</p>
+  <p>We hold nothing from your cases or your purchase, so there's nothing of them for us to send, correct, or delete: you control your cases in the app, and Apple keeps your purchase history. You can also withdraw a permission, or stop sharing analytics with developers, at any time in your device's Settings.</p>
 </section>
 
 <section>
@@ -376,15 +365,15 @@
   <p>If you're in the European Economic Area, the United Kingdom, or Switzerland, the following also applies.</p>
   <ul>
     <li><strong>Controller:</strong> Phoenix Dawn Studios LLC (see <a href="#contact">Contact us</a>).</li>
+    <li><strong>What we process:</strong> the emails and other messages you choose to send us. Nothing from the app reaches us. The app's requests for the PDF reader's code go straight from your device to the code library (see <a href="#pdfs">Reading PDFs</a>).</li>
     <li><strong>Legal bases:</strong>
       <ul>
-        <li><strong>performing our contract with you:</strong> your customer ID and purchase records at RevenueCat, to give you and restore the unlock you buy;</li>
-        <li><strong>our legitimate interests:</strong> understanding our sales through RevenueCat's dashboards, answering your emails, fixing problems, and keeping business records. We've weighed these interests against your rights, and you can object to them; and</li>
+        <li><strong>our legitimate interests:</strong> answering your messages, fixing problems, keeping business records, and making the PDF reader work by loading its code from a public code library when you add a PDF (see <a href="#pdfs">Reading PDFs</a>). We've weighed these interests against your rights, and you can object to them; and</li>
         <li><strong>legal obligations,</strong> such as tax and accounting rules.</li>
       </ul>
     </li>
     <li><strong>The age check</strong> runs only on your device, under the laws that call for it, and its result never reaches us.</li>
-    <li><strong>Is it required?</strong> The app needs your customer ID to sell you the unlock and give it back on your other devices. Without it, that can't work. Everything else in the app works without sending us anything.</li>
+    <li><strong>Is it required?</strong> No. The app sends us nothing, and contacting us is always your choice.</li>
     <li><strong>International transfers:</strong> we're in the United States, and so are our service providers. The safeguards for each one are listed in <a href="#providers">Who we share information with</a>.</li>
     <li><strong>Your rights:</strong> you can ask to access, correct, delete, or restrict our use of your personal information, to receive it in a portable format, and to object to uses based on our legitimate interests. You also have the right to complain to your data protection authority (in Switzerland, the FDPIC), though we'd appreciate the chance to sort things out with you first.</li>
     <li><strong>No automated decisions:</strong> we don't make decisions with legal or similarly significant effects about you based solely on automated processing.</li>
@@ -395,32 +384,26 @@
   <h2 id="us-states">19. California and other U.S. states</h2>
   <p>This section gives the disclosures required by the California Consumer Privacy Act (as amended by the California Privacy Rights Act), the California Online Privacy Protection Act, and similar U.S. state laws, to the extent those laws apply to us.</p>
   <ul>
-    <li><strong>Categories we collect:</strong>
-      <ul>
-        <li>identifiers: your customer ID and the identifier iOS gives the app for your device (through RevenueCat), your IP address (through RevenueCat), and your email address if you write to us;</li>
-        <li>commercial information: your Conspiracy Tracker purchase history; and</li>
-        <li>geolocation data: only your country, which RevenueCat works out from your IP address.</li>
-      </ul>
-    </li>
-    <li><strong>Sources:</strong> your device, Apple, and you (when you email us).</li>
-    <li><strong>Purposes:</strong> providing and restoring your purchase, understanding our sales, answering your messages, fixing problems, security, and legal compliance.</li>
+    <li><strong>Categories we collect:</strong> identifiers, only if you contact us: your email address or phone number, the name your email shows, and your postal address if you write to us by post, along with whatever you choose to write, say or attach. The app itself collects nothing.</li>
+    <li><strong>Sources:</strong> you, when you contact us.</li>
+    <li><strong>Purposes:</strong> answering your messages, fixing problems, security, and legal compliance.</li>
     <li><strong>Disclosed to:</strong> the service providers in <a href="#providers">Who we share information with</a>, for these business purposes only.</li>
     <li><strong>Retention:</strong> as described in <a href="#retention">How long we keep information</a>.</li>
     <li><strong>Sale and sharing:</strong> we don't sell personal information or share it for cross-context behavioral advertising, and we haven't done so in the past 12 months. That includes information about consumers under 16.</li>
     <li><strong>Sensitive personal information:</strong> we don't collect it. Your cases, which can hold anything you choose, stay on your device and never reach us.</li>
     <li><strong>Your rights:</strong> you can ask to know, access, correct, and delete your personal information (see <a href="#your-rights">Your rights</a>), and we won't discriminate against you for doing so.</li>
-    <li><strong>Opt-out signals and Do Not Track:</strong> we don't sell, share, or track you across other sites and apps, so there's nothing to opt out of. The app works the same either way.</li>
+    <li><strong>Opt-out signals and Do Not Track:</strong> we don't sell, share, or track you across other companies' apps or websites, and the app has no ads or tracking tools that would let anyone else do so, so there's nothing to opt out of. The app works the same whether or not you send a Do Not Track or Global Privacy Control signal.</li>
   </ul>
 </section>
 
 <section>
   <h2 id="security">20. Security</h2>
-  <p>The best protection is not having the data in the first place. Your cases stay on your device, and we keep very little ourselves. For what we do hold, we use reasonable safeguards: the app's connections to RevenueCat are encrypted (HTTPS), and we limit access to the people who need it and choose providers with strong security practices. Your device's passcode, Face ID, and software updates protect what the app stores, and a case lock adds a second door inside the app. No way of storing or sending information is completely secure, so we can't promise absolute security.</p>
+  <p>The best protection is not having the data in the first place. Your cases stay on your device, the app sends us nothing, and the only personal information we hold is the messages you send us. For those, we use reasonable safeguards: we limit access to the people who need it and choose providers with strong security practices. Your device's passcode, Face ID or Touch ID, and software updates protect what the app stores, and a case lock adds a second door inside the app. No way of storing or sending information is completely secure, so we can't promise absolute security.</p>
 </section>
 
 <section>
   <h2 id="changes">21. Changes to this policy</h2>
-  <p>We'll update this policy as the app changes. When we do, we'll post the new version on this page and update the effective date at the top. If a change is significant, for example if the app would start sending new kinds of information off your device, we'll tell you clearly before it takes effect, in the app or on this website, and ask for your consent where the law requires it.</p>
+  <p>We'll update this policy as the app changes. When we do, we'll post the new version on this page and update the effective date at the top. If a change is significant, for example if the app would start sending new kinds of information off your device, we'll tell you clearly before it takes effect, in the app or on this website, and ask for your consent where the law requires it. Where the law calls for it, a parent or guardian may also be asked, through Apple, to approve a significant update before a minor can use it.</p>
 </section>
 
 <section>
