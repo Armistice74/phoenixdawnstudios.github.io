@@ -47,12 +47,16 @@
   </header>
 
   <main id="main" class="doc">
-<!-- Written for the first App Store version: all ages (App Store 4+, Override = Not Applicable), the unlock through
-     Apple's StoreKit on the device with no purchase service, links opening in the Safari app, and a Declared Age Range
-     check that blocks nobody. Re-read it against the exact build before every submission: every data flow, the
-     purchase code, the age check, the PDF reader's code library and the optional features must match what ships. -->
+<!-- Written for the first App Store version (app commit f44da0a, Nov 12, 2026): all ages (App Store 4+, Override = Not
+     Applicable), the unlock through Apple's StoreKit on the device with no purchase service, links opening in the
+     person's default browser (never an in-app browser), cookie-free link previews, pdf.js bundled inside the app (no
+     code library online), share-in through the App Group, scanning and text reading with Apple's VisionKit and Vision,
+     transcripts with Apple's on-device SpeechAnalyzer (iOS/iPadOS 26 and later, no microphone), the optional iCloud
+     backup (off by default), and a Declared Age Range check that blocks nobody. The source of truth is the app's
+     docs/app-spec-v7-features-2026-11-12.md, section 13, and its code. Re-read it against the exact build before every
+     submission: every data flow, the purchase code, the age check and each on-device feature must match what ships. -->
 <h1>Privacy Policy</h1>
-<p class="policy-meta">Effective date: <time datetime="2026-11-09">November 9, 2026</time></p>
+<p class="policy-meta">Effective date: <time datetime="2026-11-12">November 12, 2026</time></p>
 
 <p class="lede">This policy explains what <strong>Conspiracy Tracker</strong>, our evidence-board app for iPhone and iPad, does with information about you: what stays on your device, what the app sends, who receives it, why, and for how long. We've written it in plain English and tried to leave nothing out.</p>
 
@@ -60,12 +64,12 @@
   <h2 id="at-a-glance">At a glance</h2>
   <ul>
     <li><strong>No sign-up.</strong> You never create an account with us.</li>
-    <li><strong>Your cases stay on your device.</strong> Everything you pin to a board, from photos and files to notes, links, recordings and strings, is saved on your iPhone or iPad. We can't see it, and it's never sent to us.</li>
+    <li><strong>Your cases stay on your device.</strong> Everything you pin to a board, from photos and files to notes, links, recordings and strings, is saved on your iPhone or iPad (and, only if you turn on iCloud backup, in your own iCloud Drive). We can't see it, and it's never sent to us.</li>
     <li><strong>The app collects no personal data, and sends nothing to us.</strong> The only personal information we get is what you choose to send us, such as an email.</li>
-    <li><strong>The app goes online only for a few clear reasons, and never to us:</strong> the websites you add as links, to show their preview; a free PDF reader's code, from a public code library, when you add a PDF; Apple's App Store, to check, buy or restore the unlock; and your own iCloud, if you turn it on in a version that has it. A link you tap opens in the Safari app.</li>
+    <li><strong>The app goes online only for a few clear reasons, and never to us:</strong> the websites you add or share as links, to show their preview (sent without cookies); Apple's App Store, to check, buy or restore the unlock; your own iCloud Drive, only if you turn on iCloud backup; and Apple, to download its speech model for your language the first time the app writes out a clip. A link you tap opens in your browser, never inside the app.</li>
     <li><strong>No ads, no tracking, and we never sell your information.</strong> The app has no analytics or crash-reporting tools.</li>
     <li><strong>Apple handles payments.</strong> We never see your card or bank details, and the app tells us nothing about your purchase.</li>
-    <li><strong>No minimum age.</strong> Where the law calls for it, the app checks your age range on your device. It doesn't stop anyone from using the app, and the result is never stored or sent.</li>
+    <li><strong>No minimum age.</strong> Only where Apple tells the app the law requires it, the app asks for your age range on your device. It doesn't stop anyone from using the app, and the result is never stored or sent.</li>
     <li><strong>Our website uses no cookies and no analytics</strong> (see <a href="../privacy.html#website">This website</a>).</li>
   </ul>
 </section>
@@ -134,16 +138,22 @@
           <td>Under Apple's policy. The app sends us nothing; Apple's sales reports don't name you.</td>
         </tr>
         <tr>
-          <th scope="row">An ordinary web request (your IP address) for a page you add as a link</th>
+          <th scope="row">An ordinary web request (your IP address), sent without cookies, for a page you add or share as a link</th>
           <td>That website, directly from your device</td>
           <td>To show the link's title, short description, and preview picture</td>
           <td>Under that website's own policy; nothing reaches us</td>
         </tr>
         <tr>
-          <th scope="row">An ordinary web request (your IP address) for the PDF reader's code</th>
-          <td>Public code libraries (cdnjs, run by Cloudflare, and jsDelivr, run by Volentio JSD Limited, UK), directly from your device</td>
-          <td>To read the pages of a PDF you add</td>
-          <td>Under those services' own policies; your PDF itself never leaves your device</td>
+          <th scope="row">A backup file of your cases, locked cases included, only if you turn on iCloud backup</th>
+          <td>Your own iCloud Drive, stored by Apple</td>
+          <td>So you can restore your cases on your other iPhone or iPad</td>
+          <td>The two newest copies from each device, plus one at least a week old and one at least a month old (six at most), until you delete them; we never see them</td>
+        </tr>
+        <tr>
+          <th scope="row">A request for Apple's speech model, the first time the app writes out a clip</th>
+          <td>Apple, from your device</td>
+          <td>So your device can write out speech on the device</td>
+          <td>Under Apple's policy; your clips never leave your device</td>
         </tr>
         <tr>
           <th scope="row">Suggestions, emails, and other messages you choose to send (by phone, text or post too)</th>
@@ -185,20 +195,21 @@
   <p>To work, the app saves the following in its private storage on your iPhone or iPad:</p>
   <ul>
     <li><strong>Your cases:</strong> their titles, boards, folders, cards, notes, theories, dates, highlights, and strings, and everything you've typed.</li>
-    <li><strong>Copies of what you pin up:</strong> photos, PDFs and other files, video and audio clips, and the preview pictures of web links. The app keeps its own copy, so a card still works if the original is moved or deleted.</li>
+    <li><strong>Copies of what you pin up or share into the app:</strong> photos, scanned pages, PDFs and other files, video and audio clips, and the preview pictures of web links. The app keeps its own copy, so a card still works if the original is moved or deleted.</li>
+    <li><strong>What the app reads on your device:</strong> the words on your scans, photos and PDF pages, and the transcripts of your video and audio clips (see <a href="#device-features">Features that run on your device</a>).</li>
     <li><strong>Your library:</strong> your layers, string colors and names, and any card formats you've made.</li>
     <li><strong>Your settings,</strong> such as sound, haptics, the board style, and which tips you've seen.</li>
     <li><strong>Which cases are locked,</strong> and whether you've unlocked unlimited cases.</li>
   </ul>
   <p>None of this is sent to us, and we have no way to see it. What you put on your boards may include information about other people, such as the people in a case you're following. That stays on your device too, and we never receive it.</p>
-  <p>Deleting the app deletes it. Your device's own backups (iCloud Backup or a computer backup) may include it, depending on your settings; Apple manages those backups, and we can't access them.</p>
+  <p>Deleting the app deletes it. Your device's own backups (iCloud Backup or a computer backup) may include it, depending on your settings; Apple manages those backups, and we can't access them. If you turned on the app's own <a href="#icloud-backup">iCloud backup</a>, its copies stay in your iCloud Drive until you delete them.</p>
   <p><strong>Files you make.</strong> A backup file, a printed or saved case file (PDF), and an evidence photo are made on your device. The app opens your device's share sheet, and you choose where each one goes, for example the Files app, AirDrop, or a message. They don't go through us. A backup file isn't locked: anyone who has it can open every case in it, including locked ones, so keep it somewhere private.</p>
 </section>
 
 <section>
   <h2 id="purchases">4. Purchases</h2>
   <p>Conspiracy Tracker is free to download, and free to use with one case at a time, with one case folder in it. A one-time purchase through the App Store unlocks unlimited cases and folders.</p>
-  <p>The purchase is between you and Apple. The app uses Apple's <strong>StoreKit</strong>, on your device, to ask the App Store whether your Apple Account has bought the unlock, and to restore it on your other devices. <strong>The app sends nothing about your purchase to us, or to any company other than Apple</strong>, and it doesn't use any other purchase service. If Apple refunds the unlock, the app goes back to the free limits, and your cases and folders stay.</p>
+  <p>You pay through Apple's App Store. The app uses Apple's <strong>StoreKit</strong>, on your device, to ask the App Store whether your Apple Account has bought the unlock, and to restore it on your other devices. <strong>The app sends nothing about your purchase to us, or to any company other than Apple</strong>, and it doesn't use any other purchase service. If Apple refunds the unlock, the app goes back to the free limits, and your cases and folders stay.</p>
   <h3 id="apple-purchases">What Apple does</h3>
   <p>You make the purchase through the App Store with your Apple Account. Apple processes your payment, keeps your purchase history, and handles refunds and Ask to Buy, under <a href="https://www.apple.com/legal/privacy/">Apple's Privacy Policy</a>. Apple sends us sales and financial reports, which we use for accounting and taxes; they don't include your name or contact details. If you write to us about a purchase, we know only what you tell us.</p>
 </section>
@@ -206,15 +217,14 @@
 <section>
   <h2 id="links">5. Web links</h2>
   <ul>
-    <li><strong>Adding a link.</strong> When you add a web link to a board, your device asks that website for the page, once, to read its title, short description, and preview picture, and then downloads the picture from wherever the page says it's kept (sometimes another website). The requests go straight from your device to those websites, not through us. Like any visit, each website sees your IP address, what was requested, and that the request came from Conspiracy Tracker. A website can also leave a cookie in the app, as it would in a browser, and see it again the next time you add one of its pages. The picture is saved on your device, with the card. If you'd rather a website not get that request, write the address on a note instead.</li>
-    <li><strong>Opening a link.</strong> Tapping <strong>Open</strong> on a link card opens the page in the <strong>Safari app</strong>, outside Conspiracy Tracker (only web addresses open). What you do there is between you, Safari, and that website, under their own privacy policies. The app can't see what you browse.</li>
+    <li><strong>Adding a link.</strong> When you add a web link to a board, or share one into the app from another app, your device asks that website for the page, once, to read its title, short description, and preview picture, and then downloads the picture from wherever the page says it's kept (sometimes another website). The requests go straight from your device to those websites, not through us. Like any visit, each website sees your IP address, what was requested, and that the request came from Conspiracy Tracker. <strong>The page and its picture are fetched without cookies:</strong> the app sends none with these requests. The picture is saved on your device, with the card. If you'd rather a website not get that request, write the address on a note instead.</li>
+    <li><strong>Opening a link.</strong> Tapping <strong>Open</strong> on a link card opens the page in <strong>your browser</strong> (Safari, unless you've chosen another), outside Conspiracy Tracker (only web addresses open). The app never opens web pages inside itself. What you do there is between you, your browser, and that website, under their own privacy policies. The app can't see what you browse.</li>
   </ul>
 </section>
 
 <section>
   <h2 id="pdfs">6. Reading PDFs</h2>
-  <p>When you add a PDF, the app reads its pages on your device, to show them on the card and to let you search and highlight their words. To do that, it uses <strong>pdf.js</strong>, a free, open-source PDF reader. The app loads the reader's code from a public code library, <strong>cdnjs</strong> (run by Cloudflare, Inc.), or <strong>jsDelivr</strong> (run by Volentio JSD Limited, in the UK) if cdnjs doesn't answer. It also loads fonts and character maps from jsDelivr when a PDF needs them. These are ordinary web requests: the library sees your IP address and which version of the reader was requested, like any website. They're used only to deliver the reader to your device. The app adds no ID to them and none of your PDF's content. At most, the font and character-map files a PDF needs show the library which kind of lettering it uses, such as Japanese. What the libraries do with their own logs is up to them, under Cloudflare's and jsDelivr's own policies.</p>
-  <p><strong>Your PDF itself never leaves your device.</strong> It's handed to the reader on your device, and nothing about it is sent anywhere.</p>
+  <p><strong>PDFs are read on your device, with no internet needed.</strong> The app reads a PDF's pages with <strong>pdf.js</strong>, a free, open-source PDF reader that's built into the app, together with the fonts and character maps it needs. Nothing is downloaded to read a PDF, and your PDF never leaves your device.</p>
 </section>
 
 <section>
@@ -225,24 +235,34 @@
 
 <section>
   <h2 id="locks">8. Face ID and case locks</h2>
-  <p>When you lock a case, your device's own <strong>Face ID</strong> or <strong>Touch ID</strong> (or its passcode) opens it. Face ID and Touch ID are handled entirely by your device: the app never sees your face, your fingerprint, their data, or your passcode. It only learns whether you were recognized. Locked cases are stored on your device like any other case; the lock keeps them closed inside the app.</p>
+  <p>When you lock a case, your device's own <strong>Face ID</strong> or <strong>Touch ID</strong> (or its passcode) opens it. Face ID and Touch ID are handled entirely by your device: the app never sees your face, your fingerprint, their data, or your passcode. It only learns whether you were recognized. Locked cases are stored on your device like any other case; the lock keeps them closed inside the app only. <strong>Backups have locked cases in them, in readable form:</strong> a backup file you save, and the copies <a href="#icloud-backup">iCloud backup</a> makes if you turn it on. Anyone who can open a backup can read every case in it.</p>
 </section>
 
 <section>
   <h2 id="device-features">9. Features that run on your device</h2>
-  <p>Some versions of the app include these features. Each one runs on your device with Apple's built-in tools, and none of them sends your cases to us or to any AI service:</p>
+  <p>These features run on your device with Apple's built-in tools. None of them sends your cases to us or to any AI service.</p>
+  <h3 id="scanning">Scanning paper and reading words</h3>
+  <p><strong>Scan paper</strong> uses Apple's document camera to photograph your pages. The app then reads the words on your scans, on the photos you pin up, and on PDF pages that are only pictures, with Apple's text recognition, so you can search them, highlight them and tie strings to them. All of this happens on your device: the pictures and their words never leave it.</p>
+  <h3 id="transcripts">Transcripts of your video and audio clips</h3>
+  <p>On an iPhone or iPad with <strong>iOS or iPadOS 26 or later</strong>, the app writes out what's said in your video and audio clips with Apple's on-device speech recognition, so you can read and search it. It reads the clips you've added; <strong>it never uses your microphone</strong>, and <strong>the audio never leaves your device</strong>. It listens for your device's main language. The first time, your device may download Apple's speech model for that language from Apple; your clips aren't part of that download. On earlier versions of iOS and iPadOS, transcripts aren't available.</p>
+  <h3 id="share-in">Sharing into the app</h3>
+  <p>When you share a photo, file, link or text to Conspiracy Tracker from another app, the app's share extension copies it into storage on your device that only the app and its extension can use (an App Group), and the app then moves it into its Inbox. What you share stays on your device and is never sent to us. A shared link's preview is fetched as described in <a href="#links">Web links</a>.</p>
+  <h3 id="icloud-backup">iCloud backup</h3>
   <ul>
-    <li><strong>Scanning paper and reading words in photos,</strong> so you can search and highlight them.</li>
-    <li><strong>Reading speech in your video and audio clips</strong> into words, so you can search them.</li>
-    <li><strong>Sharing into the app</strong> from other apps, such as a photo or a web page from Safari.</li>
-    <li><strong>iCloud backup and sync,</strong> if you turn it on. Your cases are then also stored in <strong>your own iCloud account</strong>, by Apple, under <a href="https://www.apple.com/legal/privacy/">Apple's Privacy Policy</a>, so they can appear on your other devices. We can't see what's in your iCloud account.</li>
+    <li><strong>Off until you turn it on,</strong> in the app's Settings (<strong>Back up to iCloud Drive</strong>).</li>
+    <li><strong>What it does:</strong> after you change something, the app saves a backup file of your cases, the same kind <strong>Save a backup file</strong> makes, in <strong>your own iCloud Drive</strong>, in the app's folder that you can see in the Files app. It does this at most once a day, usually when you leave the app, or straight away when you tap <strong>Back up to iCloud now</strong>.</li>
+    <li><strong>Locked cases are included, and readable.</strong> Anyone who can open your iCloud Drive can read every case in a backup, locked ones too. If a case is locked when you turn it on, the app asks for Face ID, Touch ID or your passcode first.</li>
+    <li><strong>How many:</strong> it keeps the two newest copies from each of your devices, plus one at least a week old and one at least a month old once there are copies that old (with the copies on their way to those ages, six at most per device), and deletes that device's other older ones.</li>
+    <li><strong>Restoring:</strong> on another iPhone or iPad signed in to the same Apple Account, <strong>Restore from iCloud</strong> brings a copy back. Like any restore, it replaces the cases on that device.</li>
+    <li><strong>Deleting:</strong> turning it off stops new copies. The copies already there stay until you delete them in the Files app.</li>
+    <li><strong>Who holds it:</strong> Apple stores your iCloud Drive under <a href="https://www.apple.com/legal/privacy/">Apple's Privacy Policy</a> and uses your own iCloud storage for it. <strong>We can't see your backups.</strong> Under standard data protection, Apple holds the encryption keys for iCloud Drive; it's end-to-end encrypted only if you turn on Advanced Data Protection (see <a href="https://support.apple.com/102651">Apple's iCloud data security overview</a>).</li>
   </ul>
 </section>
 
 <section>
   <h2 id="age-check">10. The age check</h2>
-  <p>Conspiracy Tracker has no minimum age, and <strong>the age check never stops anyone from using it.</strong> Some laws (today, in some U.S. states) ask apps to check users' ages through the App Store. Where the law calls for it, the app asks your device which <strong>age range</strong> you're in, using Apple's Declared Age Range feature. Apple decides what to share, based on your Apple Account and the choices you or your parent make, and the app learns only a range, never your birthday.</p>
-  <p>The app uses the answer only to follow those laws. It works the same for every age, and if you choose not to share your age range, it carries on as normal. The check runs on your device. The age range is kept only in the app's memory while it's open. It's <strong>never saved, and never sent</strong> to us or anyone else.</p>
+  <p>Conspiracy Tracker has no minimum age, and <strong>the age check never stops anyone from using it.</strong> Some laws (today, in some U.S. states) ask apps to check users' ages through the App Store. <strong>Only where Apple tells the app that the law requires it</strong>, the app asks which <strong>age range</strong> you're in, using Apple's Declared Age Range feature. Everywhere else, it never asks. Apple decides what to share, based on your Apple Account and the choices you or your parent make, and the app learns only a range, never your birthday.</p>
+  <p>The app uses the answer only to follow those laws. It never blocks or limits anything because of it, and if you choose not to share your age range, or anything goes wrong, it carries on as normal. The one thing it changes: if you share that you're under 13, <strong>Send a suggestion</strong> in Help asks a parent or guardian to email us for you, instead of opening an email. The check runs on your device. The age range is kept only in the app's memory while it's open. It's <strong>never saved, and never sent</strong> to us or anyone else.</p>
   <p>Where the law calls for it, Apple asks a parent or guardian to approve a minor's downloads and in-app purchases, and we rely on that approval.</p>
 </section>
 
@@ -261,7 +281,7 @@
       <tbody>
         <tr>
           <th scope="row">Camera</th>
-          <td>To take photos, and to scan paper, for your cases.</td>
+          <td>To take photos, and to scan paper with <strong>Scan paper</strong>, for your cases.</td>
         </tr>
         <tr>
           <th scope="row">Photos</th>
@@ -273,12 +293,12 @@
         </tr>
         <tr>
           <th scope="row">Speech recognition</th>
-          <td>Only in versions that read speech in your clips (see <a href="#device-features">Features that run on your device</a>).</td>
+          <td>Only if Apple requires it for writing out your clips on the device (see <a href="#transcripts">Transcripts</a>). If it's asked, the prompt says: &ldquo;Writes out what's said in your video and audio clips so you can read and search it. The app does this on this device only.&rdquo;</td>
         </tr>
       </tbody>
     </table>
   </div>
-  <p><strong>What the app doesn't ask for:</strong> your microphone, location, contacts, calendar, or health data, or permission to track you (App Tracking Transparency). The app doesn't access any of these.</p>
+  <p><strong>What the app doesn't ask for:</strong> your microphone (it never records; transcripts are written from clips you've added), location, contacts, calendar, or health data, or permission to track you (App Tracking Transparency). The app doesn't access any of these.</p>
 </section>
 
 <section>
@@ -317,15 +337,15 @@
       </tbody>
     </table>
   </div>
-  <p><strong>Apple</strong> runs the App Store, processes payments and refunds, tells the app on your device whether you've bought the unlock (StoreKit), provides Face ID and Touch ID, the age range, and iCloud, and makes the Safari app, where links open. Apple does this as an independent company under its own <a href="https://www.apple.com/legal/privacy/">privacy policy</a>, not as our service provider.</p>
-  <p><strong>Websites you add as links, and the code libraries the PDF reader comes from</strong> (cdnjs, run by Cloudflare, and jsDelivr, run by Volentio JSD Limited, in the UK), receive ordinary web requests straight from your device, as described in <a href="#links">Web links</a> and <a href="#pdfs">Reading PDFs</a>. They aren't our service providers, and we receive nothing from them.</p>
+  <p><strong>Apple</strong> runs the App Store, processes payments and refunds, tells the app on your device whether you've bought the unlock (StoreKit), provides Face ID and Touch ID and the age range, stores your <a href="#icloud-backup">iCloud backup</a> in your own iCloud Drive if you turn it on, and serves the speech model your device downloads for <a href="#transcripts">transcripts</a>. Apple does this as an independent company under its own <a href="https://www.apple.com/legal/privacy/">privacy policy</a>, not as our service provider.</p>
+  <p><strong>Websites you add or share as links</strong> receive ordinary web requests, without cookies, straight from your device, as described in <a href="#links">Web links</a>. They aren't our service providers, and we receive nothing from them.</p>
   <p>We may also share information if the law requires it (for example, a valid court order), to protect the rights, safety, and property of our users, the public, or us, including to prevent fraud, or as part of a merger, acquisition, or sale of assets, in which case we'll require the new owner to respect this policy.</p>
 </section>
 
 <section>
   <h2 id="retention">14. How long we keep information</h2>
   <ul>
-    <li><strong>On your device:</strong> until you delete it in the app or delete the app. Copies may remain in your own device backups and backup files until those are replaced or deleted.</li>
+    <li><strong>On your device:</strong> until you delete it in the app or delete the app. Copies may remain in your own device backups, backup files and iCloud backup copies until those are replaced or deleted.</li>
     <li><strong>Suggestions, emails and other messages:</strong> up to 3 years after our last exchange, then deleted. We delete them sooner if you ask, unless we need them for a legal claim. If we learn an email came from a child under 13, we delete it promptly after we've replied (see <a href="#children">Children and teens</a>).</li>
     <li><strong>Apple's sales and financial reports:</strong> 7 years, for tax and accounting. They don't include your name or contact details.</li>
     <li><strong>Your age range:</strong> never stored.</li>
@@ -335,7 +355,7 @@
 <section>
   <h2 id="delete-data">15. Deleting your information</h2>
   <ul>
-    <li><strong>On your device:</strong> delete a case in the app (press and hold it on the shelf), or delete the app to remove everything it stores. (&ldquo;Offload App&rdquo; keeps your data, so choose &ldquo;Delete App&rdquo; to remove it.) Delete any backup files you've saved, too.</li>
+    <li><strong>On your device:</strong> delete a case in the app (press and hold it on the shelf), or delete the app to remove everything it stores. (&ldquo;Offload App&rdquo; keeps your data, so choose &ldquo;Delete App&rdquo; to remove it.) Delete any backup files you've saved, too, and, if you used iCloud backup, its copies in the app's folder in iCloud Drive (in the Files app).</li>
     <li><strong>Emails and other messages:</strong> email <a href="mailto:hello@phoenixdawnstudios.com?subject=Delete%20my%20data">hello@phoenixdawnstudios.com</a>, and we'll delete them.</li>
   </ul>
   <p>That's everything: the app sends us nothing, so we hold no other record of you to delete.</p>
@@ -345,7 +365,7 @@
 <section>
   <h2 id="children">16. Children and teens</h2>
   <p>Conspiracy Tracker is a general-audience app, made for people who follow true crime and do their own research. It has <strong>no minimum age</strong>, as our <a href="terms.html">Terms of Use</a> say, but it isn't directed to children.</p>
-  <p><strong>Apart from an email you choose to send us, the app doesn't collect personal information from anyone, including children.</strong> There's no account, no ads, and no analytics, your cases never reach us, and a purchase is between you and Apple. Where the law calls for it, the app's on-device <a href="#age-check">age check</a> asks Apple for your age range, but it doesn't stop anyone from using the app, and the age range is never stored or sent. Where the law calls for it, Apple asks a parent or guardian to approve a minor's downloads and purchases.</p>
+  <p><strong>Apart from an email you choose to send us, the app doesn't collect personal information from anyone, including children.</strong> There's no account, no ads, and no analytics, your cases never reach us, and you pay for a purchase through Apple's App Store. Only where Apple tells the app the law requires it, the app's on-device <a href="#age-check">age check</a> asks Apple for your age range, but it doesn't stop anyone from using the app, and the age range is never stored or sent. Where the law calls for it, Apple asks a parent or guardian to approve a minor's downloads and purchases.</p>
   <p>If you're under 13, please ask a parent or guardian before you email us. If we learn an email came from a child under 13, we'll use it only to answer that one message, we won't share it, and we'll delete it promptly after replying. Parents and guardians can ask us to delete a child's email at any time, and we will.</p>
 </section>
 
@@ -366,10 +386,10 @@
   <p>If you're in the European Economic Area, the United Kingdom, or Switzerland, the following also applies.</p>
   <ul>
     <li><strong>Controller:</strong> Phoenix Dawn Studios LLC (see <a href="#contact">Contact us</a>).</li>
-    <li><strong>What we process:</strong> the emails and other messages you choose to send us. Nothing from the app reaches us. The app's requests for the PDF reader's code go straight from your device to the code library (see <a href="#pdfs">Reading PDFs</a>).</li>
+    <li><strong>What we process:</strong> the emails and other messages you choose to send us. Nothing from the app reaches us.</li>
     <li><strong>Legal bases:</strong>
       <ul>
-        <li><strong>our legitimate interests:</strong> answering your messages, fixing problems, keeping business records, and making the PDF reader work by loading its code from a public code library when you add a PDF (see <a href="#pdfs">Reading PDFs</a>). We've weighed these interests against your rights, and you can object to them; and</li>
+        <li><strong>our legitimate interests:</strong> answering your messages, fixing problems, and keeping business records. We've weighed these interests against your rights, and you can object to them; and</li>
         <li><strong>legal obligations,</strong> such as tax and accounting rules.</li>
       </ul>
     </li>
@@ -400,8 +420,9 @@
 <section>
   <h2 id="japan">20. Japan (日本)</h2>
   <!-- Japan section (APPI notices; the tokushoho page links here as #japan). Keep it true to the build and to sections
-       6, 7, 13, 14, 16 and 17: open items are in the app's NEXT-STEPS.md ("Japan"). Needs a native-speaker check before
-       it goes live. -->
+       5, 7, 9, 13, 14, 16 and 17: open items are in the app's NEXT-STEPS.md ("Japan"). The Nov 12, 2026 changes (端末上で
+       動作する機能, the 外部送信 table without the PDF code libraries, 安全管理措置 for a one-person studio) need the same
+       native-speaker check. -->
   <p>This section is for users in Japan and is written in Japanese. The rest of this policy applies too.</p>
   <div lang="ja">
     <p>日本にお住まいのお客様には、本ポリシーの他の項目に加えて、個人情報の保護に関する法律（個人情報保護法）に基づき、次の事項をお知らせします。</p>
@@ -409,7 +430,17 @@
       <dt>事業者</dt>
       <dd>Phoenix Dawn Studios LLC（1354 Combermere Dr, Suite H, Troy, MI 48083-2743, USA）。代表者の氏名は、ご請求があれば遅滞なくお知らせします。</dd>
       <dt>本アプリについて</dt>
-      <dd>本アプリ（Conspiracy Tracker）は、お客様の個人情報を収集しません。ケースとその内容はお客様の端末に保存され（iCloud に対応したバージョンで iCloud をオンにした場合は、お客様ご自身の iCloud アカウントにも保存されます）、当社に送信されることはありません。リンクのプレビューを表示するための通信や、PDF リーダーのプログラムを取得するための通信は、お客様の端末から各ウェブサイトや配信サービスへ直接行われ、当社がその情報を受け取ることはありません（下記の「外部送信について」をご覧ください）。アプリ内課金のお支払いは Apple の App Store を通じて行われ、本アプリが購入に関する情報を当社に送信することはありません（Apple から当社に届く売上レポートには、お客様の氏名や連絡先は含まれません）。</dd>
+      <dd>本アプリ（Conspiracy Tracker）は、お客様の個人情報を収集しません。ケースとその内容はお客様の端末に保存され（アプリの「iCloud バックアップ」をオンにした場合に限り、ケースのバックアップファイルがお客様ご自身の iCloud Drive にも保存されます。下記の「端末上で動作する機能」をご覧ください）、当社に送信されることはありません。リンクのプレビューを表示するための通信は、Cookie を送信せずに、お客様の端末から各ウェブサイトへ直接行われ、当社がその情報を受け取ることはありません（下記の「外部送信について」をご覧ください）。PDF は、アプリに組み込まれた PDF リーダーにより端末上で読み込まれ、インターネット接続は必要ありません。アプリ内課金のお支払いは Apple の App Store を通じて行われ、本アプリが購入に関する情報を当社に送信することはありません（Apple から当社に届く売上レポートには、お客様の氏名や連絡先は含まれません）。</dd>
+      <dt>端末上で動作する機能</dt>
+      <dd>
+        次の機能は、Apple が端末に備えている機能を使って動作します。いずれも、お客様のケースを当社や AI サービスに送信することはありません。
+        <ul>
+          <li>紙のスキャンと文字の読み取り：Apple のドキュメントカメラで紙を撮影し、スキャンした紙、ボードに追加した写真、画像のみの PDF ページの文字を、Apple の文字認識機能で読み取ります。すべて端末上で行われ、画像や読み取った文字が端末の外に送信されることはありません。</li>
+          <li>音声の文字起こし：iOS / iPadOS 26 以降の iPhone・iPad では、お客様が追加した動画・音声クリップで話されている内容を、Apple の端末上の音声認識で文字にします。マイクは使用せず、音声が端末の外に送信されることはありません。端末の第一言語（最初に設定されている言語）で聞き取ります。初めて使うときに、端末がその言語用の Apple の音声モデルを Apple からダウンロードすることがあります（クリップの内容は送信されません）。</li>
+          <li>他のアプリからの共有：他のアプリから本アプリに共有した写真、ファイル、リンク、テキストは、本アプリとその共有機能だけが使える端末内の保存領域（App Group）を経由して本アプリに取り込まれ、当社に送信されることはありません。</li>
+          <li>iCloud バックアップ：お客様がオンにするまではオフです。オンにすると、ケースに変更があった後、1日に1回まで（通常はアプリを離れたとき）、ケースのバックアップファイルをお客様ご自身の iCloud Drive の本アプリのフォルダ（「ファイル」アプリで確認できます）に保存します。ロックしたケースも読める形で含まれるため、お客様の iCloud Drive を開ける人はその内容を読むことができます（アプリで保存するバックアップファイルも同様です）。端末ごとに、新しいもの2つに加えて1週間以上前のものと1か月以上前のものを1つずつ残し（それらの候補を含め1台につき最大6つ）、それ以外の古いものは削除します。同じ Apple Account でサインインしている別の iPhone・iPad で「<span lang="en">Restore from iCloud</span>」を使うと復元でき、その端末のケースは復元した内容に置き換えられます。バックアップは「ファイル」アプリで削除できます。保存は Apple のプライバシーポリシーに従って Apple が行い、当社がその内容を見ることはできません。</li>
+        </ul>
+      </dd>
       <dt>取得する個人情報</dt>
       <dd>
         お客様から当社にご連絡をいただいた場合に限り、次の情報を取得します。
@@ -434,8 +465,8 @@
       <dt>安全管理措置</dt>
       <dd>
         <ul>
-          <li>組織的安全管理措置：当社の代表者を個人情報の取扱いの責任者とし、取り扱う者を限定しています（現在は代表者1名のみです）。</li>
-          <li>人的安全管理措置：個人情報を取り扱う代表者は、個人情報の適正な取扱いについて理解したうえで取り扱っています。今後、従業者や外部の協力者に取り扱わせる場合は、秘密保持を約束させ、必要な教育を行います。</li>
+          <li>組織的安全管理措置：個人情報を取り扱うのは当社の代表者1名のみで、代表者が取扱いの責任者を務めています。</li>
+          <li>人的安全管理措置：個人情報を取り扱う代表者は、個人情報の適正な取扱いについて理解したうえで取り扱っています。</li>
           <li>物理的安全管理措置：個人情報を扱う機器は、盗難や紛失に備えてパスコードなどでロックし、郵便で受け取った書類は第三者の目に触れない場所に保管しています。</li>
           <li>技術的安全管理措置：メールと電話のアカウントを2段階認証とアクセス管理で保護して取扱者以外がアクセスできないようにし、機器の OS とソフトウェアを最新の状態に保っています。</li>
           <li>外的環境の把握：当社は米国で個人情報を取り扱い、上記の事業者も米国の事業者です。上記の米国の制度を把握したうえで、安全管理措置を講じています。なお、Google のサーバーの所在国は、上記「保管場所」のとおり特定できません。</li>
@@ -465,27 +496,15 @@
         </thead>
         <tbody>
           <tr>
-            <th scope="row">cdnjs（米国の Cloudflare, Inc. が運営するコード配信サービス）</th>
-            <td>IP アドレス、要求するファイルのアドレス（PDF リーダー「pdf.js」とそのバージョン）、端末とブラウザの種類などの情報（ユーザーエージェント。iOS が自動的に付けます）</td>
-            <td>PDF リーダーのプログラムを端末に配信するため</td>
-            <td>PDF を追加したとき</td>
-          </tr>
-          <tr>
-            <th scope="row">jsDelivr（英国の Volentio JSD Limited が運営するコード配信サービス）</th>
-            <td>IP アドレス、要求するファイルのアドレス（pdf.js と、PDF の表示に必要なフォントや文字コード表の種類。日本語の PDF では、日本語用のファイルであることが分かります）、ユーザーエージェント</td>
-            <td>cdnjs から読み込めない場合の PDF リーダーの配信と、PDF の表示に必要なフォント・文字コード表の配信</td>
-            <td>PDF を追加したときのうち、cdnjs から読み込めない場合や、PDF がフォント・文字コード表を必要とする場合（日本語の PDF では多くの場合必要になります）</td>
-          </tr>
-          <tr>
-            <th scope="row">お客様がリンクとして追加したウェブサイトと、そのプレビュー画像の保存先</th>
-            <td>IP アドレス、要求したページや画像のアドレス、通信が本アプリからであることを示す情報、そのウェブサイトが以前に本アプリ内で設定した Cookie</td>
+            <th scope="row">お客様がリンクとして追加または共有したウェブサイトと、そのプレビュー画像の保存先</th>
+            <td>IP アドレス、要求したページや画像のアドレス、通信が本アプリからであることを示す情報、端末の種類などの情報（ユーザーエージェント。iOS が自動的に付けます）。Cookie は送信しません。</td>
             <td>リンクのタイトル、短い説明、プレビュー画像を表示するため</td>
-            <td>リンクを追加したとき（1回）</td>
+            <td>リンクを追加したとき、または他のアプリから本アプリにリンクを共有したとき（1回）</td>
           </tr>
         </tbody>
       </table>
     </div>
-    <p>このほか、価格の表示、購入、購入の復元の際は、Apple の StoreKit を通じて App Store と通信します（<a href="https://www.apple.com/jp/legal/privacy/">Apple のプライバシーポリシー</a>に従います）。リンクを開くと Safari アプリで表示され、その後の通信は Safari とそのウェブサイトの間で行われます。</p>
+    <p>このほか、次の場合は Apple と通信します（いずれも <a href="https://www.apple.com/jp/legal/privacy/">Apple のプライバシーポリシー</a>に従います）。価格の表示、購入、購入の復元の際は、Apple の StoreKit を通じて App Store と通信します。iCloud バックアップをオンにした場合は、バックアップファイルがお客様ご自身の iCloud Drive に保存されます。音声の文字起こしを初めて使うときは、端末が Apple の音声モデルを Apple からダウンロードすることがあります。なお、リンクを開くと、お使いのブラウザ（別のブラウザを選んでいない場合は Safari）で表示され、その後の通信はそのブラウザとウェブサイトの間で行われます。本アプリの中でウェブページを開くことはありません。</p>
   </div>
 </section>
 
