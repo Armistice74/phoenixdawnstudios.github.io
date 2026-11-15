@@ -47,16 +47,25 @@
   </header>
 
   <main id="main" class="doc">
-<!-- Written for the first App Store version (app commit f44da0a, Nov 12, 2026): all ages (App Store 4+, Override = Not
-     Applicable), the unlock through Apple's StoreKit on the device with no purchase service, links opening in the
-     person's default browser (never an in-app browser), cookie-free link previews, pdf.js bundled inside the app (no
+<!-- Written for the first App Store version (app commit 69d3741, build 1.0 (7), Nov 14, 2026; first written for f44da0a,
+     Nov 12): all ages (App Store 4+, Override = Not Applicable), the unlock through Apple's StoreKit on the device with no
+     purchase service, links opening in the person's default browser (never an in-app browser), link previews with no
+     cookies of the app's own (page and picture fetched by expo/fetch, the global fetch in SDK 58, with credentials 'omit':
+     httpShouldHandleCookies = false and no Cookie header; whether a redirected request keeps that is UNVERIFIED, so the
+     page says "no cookies of its own"; links.ts COOKIES describes React Native's fetch, which this app doesn't use), a link's own
+     video file downloaded from the device (links.ts VIDEOS, videoFetch.ts, native/CtFetch.swift: og:video and kin or a
+     direct video address, https only, ephemeral session with no cookies or cache, 300 MiB (about 315 MB) and 180 s caps, often from
+     another host), the on-device diagnostic log (src/diag/log.ts: ct-diag.txt in Documents, never sent, five taps on
+     Settings > About > Version show Copy diagnostic log), pdf.js bundled inside the app (no
      code library online), share-in through the App Group, scanning and text reading with Apple's VisionKit and Vision,
      transcripts with Apple's on-device SpeechAnalyzer (iOS/iPadOS 26 and later, no microphone), the optional iCloud
      backup (off by default), and a Declared Age Range check that blocks nobody. The source of truth is the app's
-     docs/app-spec-v7-features-2026-11-12.md, section 13, and its code. Re-read it against the exact build before every
+     docs/app-spec-v7-features-2026-11-12.md, section 13, and its code (the video downloads and the diagnostic log, added
+     Nov 14, aren't in that spec: their source is links.ts VIDEOS, videoFetch.ts, native/CtFetch.swift and
+     src/diag/log.ts). Re-read it against the exact build before every
      submission: every data flow, the purchase code, the age check and each on-device feature must match what ships. -->
 <h1>Privacy Policy</h1>
-<p class="policy-meta">Effective date: <time datetime="2026-11-12">November 12, 2026</time></p>
+<p class="policy-meta">Effective date: <time datetime="2026-11-15">November 15, 2026</time></p>
 
 <p class="lede">This policy explains what <strong>Conspiracy Tracker</strong>, our evidence-board app for iPhone and iPad, does with information about you: what stays on your device, what the app sends, who receives it, why, and for how long. We've written it in plain English and tried to leave nothing out.</p>
 
@@ -66,7 +75,7 @@
     <li><strong>No sign-up.</strong> You never create an account with us.</li>
     <li><strong>Your cases stay on your device.</strong> Everything you pin to a board, from photos and files to notes, links, recordings and strings, is saved on your iPhone or iPad (and, only if you turn on iCloud backup, in your own iCloud Drive). We can't see it, and it's never sent to us.</li>
     <li><strong>The app collects no personal data, and sends nothing to us.</strong> The only personal information we get is what you choose to send us, such as an email.</li>
-    <li><strong>The app goes online only for a few clear reasons, and never to us:</strong> the websites you add or share as links, to show their preview (sent without cookies); Apple's App Store, to check, buy or restore the unlock; your own iCloud Drive, only if you turn on iCloud backup; and Apple, to download its speech model for your language the first time the app writes out a clip. A link you tap opens in your browser, never inside the app.</li>
+    <li><strong>The app goes online only for a few clear reasons, and never to us:</strong> the websites you add or share as links, to show their preview and, when a page offers its own video file, to save that video (sometimes from another website), with no cookies of the app's own; Apple's App Store, to check, buy or restore the unlock; your own iCloud Drive, only if you turn on iCloud backup; and Apple, to download its speech model for your language the first time the app writes out a clip. A link you tap opens in your browser, never inside the app.</li>
     <li><strong>No ads, no tracking, and we never sell your information.</strong> The app has no analytics or crash-reporting tools.</li>
     <li><strong>Apple handles payments.</strong> We never see your card or bank details, and the app tells us nothing about your purchase.</li>
     <li><strong>No minimum age.</strong> Only where Apple tells the app the law requires it, the app asks for your age range on your device. It doesn't stop anyone from using the app, and the result is never stored or sent.</li>
@@ -132,15 +141,21 @@
           <td>Until you delete it or the app</td>
         </tr>
         <tr>
+          <th scope="row">A short diagnostic log of app events (no case content)</th>
+          <td>Stays on your device; reaches us only if you copy it and paste it into a message to us</td>
+          <td>To help find bugs that only show up on a real device</td>
+          <td>The app's current run and the one before; each new run replaces the oldest</td>
+        </tr>
+        <tr>
           <th scope="row">Your purchase of the unlock</th>
           <td>Between your device and Apple's App Store, through Apple's StoreKit</td>
           <td>To unlock unlimited cases, and to restore the unlock</td>
           <td>Under Apple's policy. The app sends us nothing; Apple's sales reports don't name you.</td>
         </tr>
         <tr>
-          <th scope="row">An ordinary web request (your IP address), sent without cookies, for a page you add or share as a link</th>
-          <td>That website, directly from your device</td>
-          <td>To show the link's title, short description, and preview picture</td>
+          <th scope="row">An ordinary web request (your IP address), with no cookies of the app's own, for a page you add or share as a link, its preview picture, and, if the page names one, its video file</th>
+          <td>That website, and wherever the page says its picture or video is kept (sometimes another website), directly from your device</td>
+          <td>To show the link's title, short description, and preview picture, or to save the page's video on your device as a clip you can play</td>
           <td>Under that website's own policy; nothing reaches us</td>
         </tr>
         <tr>
@@ -195,11 +210,12 @@
   <p>To work, the app saves the following in its private storage on your iPhone or iPad:</p>
   <ul>
     <li><strong>Your cases:</strong> their titles, boards, folders, cards, notes, theories, dates, highlights, and strings, and everything you've typed.</li>
-    <li><strong>Copies of what you pin up or share into the app:</strong> photos, scanned pages, PDFs and other files, video and audio clips, and the preview pictures of web links. The app keeps its own copy, so a card still works if the original is moved or deleted.</li>
+    <li><strong>Copies of what you pin up or share into the app:</strong> photos, scanned pages, PDFs and other files, video and audio clips, the preview pictures of web links, and videos saved from web links. The app keeps its own copy, so a card still works if the original is moved or deleted.</li>
     <li><strong>What the app reads on your device:</strong> the words on your scans, photos and PDF pages, and the transcripts of your video and audio clips (see <a href="#device-features">Features that run on your device</a>).</li>
     <li><strong>Your library:</strong> your layers, string colors and names, and any card formats you've made.</li>
     <li><strong>Your settings,</strong> such as sound, haptics, the board style, and which tips you've seen.</li>
     <li><strong>Which cases are locked,</strong> and whether you've unlocked unlimited cases.</li>
+    <li><strong>A short diagnostic log,</strong> to help find bugs that only show up on a real device. It notes app events, such as when the app starts and when it comes to the front or goes to the background, when touches start and end, the first word of each button you press (which can be the first word of a layer or string-color name you gave), the steps of bringing in something you share, and, for a link you share in or open from a card, only the names of the websites involved (the page's, and those its picture or video came from, such as example.com), never the full address. It never holds what's in your cases: no card text, titles, file names or page words. It's a small file in the app's storage, covering the app's current run and the one before, and <strong>it's never sent anywhere.</strong> Five quick taps on <strong>Version</strong> in Settings &rsaquo; About show <strong>Copy diagnostic log</strong>, which copies it to your clipboard only if you tap it; from there, it goes only where you paste it (see <a href="#emails">Suggestions and emails</a>).</li>
   </ul>
   <p>None of this is sent to us, and we have no way to see it. What you put on your boards may include information about other people, such as the people in a case you're following. That stays on your device too, and we never receive it.</p>
   <p>Deleting the app deletes it. Your device's own backups (iCloud Backup or a computer backup) may include it, depending on your settings; Apple manages those backups, and we can't access them. If you turned on the app's own <a href="#icloud-backup">iCloud backup</a>, its copies stay in your iCloud Drive until you delete them.</p>
@@ -217,7 +233,8 @@
 <section>
   <h2 id="links">5. Web links</h2>
   <ul>
-    <li><strong>Adding a link.</strong> When you add a web link to a board, or share one into the app from another app, your device asks that website for the page, once, to read its title, short description, and preview picture, and then downloads the picture from wherever the page says it's kept (sometimes another website). The requests go straight from your device to those websites, not through us. Like any visit, each website sees your IP address, what was requested, and that the request came from Conspiracy Tracker. <strong>The page and its picture are fetched without cookies:</strong> the app sends none with these requests. The picture is saved on your device, with the card. If you'd rather a website not get that request, write the address on a note instead.</li>
+    <li><strong>Adding a link.</strong> When you add a web link to a board (with <strong>+ &rsaquo; Web link</strong> or <strong>Paste</strong>), or share one into the app from another app, your device asks that website for the page, once, to read its title, short description, and preview picture, and then downloads the picture from wherever the page says it's kept (sometimes another website). The requests go straight from your device to those websites, not through us. Like any visit, each website sees your IP address, what was requested, and that the request came from Conspiracy Tracker. <strong>The app sends no cookies of its own:</strong> it asks for the page and its picture with cookies turned off, and it never sets any cookies itself. The picture is saved on your device, with the card. If you'd rather a website not get these requests, write the address on a note instead.</li>
+    <li><strong>Videos from links.</strong> If the page names its own video file in a format the app can play (MP4, MOV or M4V), in the tags websites use for link previews, or if the address you add is itself such a video file, the app <strong>downloads that video</strong> instead of the preview picture, so it becomes a clip you can play in your case. The download goes straight from your device to wherever the video is kept: the address itself, or wherever the page says, which is often another website, such as a company that stores and delivers videos for that site (a content delivery network). Like the page, that website sees your IP address, what was requested, and that the request came from Conspiracy Tracker. The download uses secure (https) addresses only, over a private connection that <strong>neither sends nor keeps cookies</strong> and keeps no cached copy, and it stops if the video is bigger than about <strong>300 MB</strong> or takes more than three minutes. The video is saved on your device as a clip card, which keeps the page's address. On mobile data, a video can use up to about 300 MB of your data plan. If the video can't be downloaded, the link comes in as an ordinary link card, as above. X, YouTube, and most social apps don't offer their video files this way, so their links stay link cards and open in your browser.</li>
     <li><strong>Opening a link.</strong> Tapping <strong>Open</strong> on a link card opens the page in <strong>your browser</strong> (Safari, unless you've chosen another), outside Conspiracy Tracker (only web addresses open). The app never opens web pages inside itself. What you do there is between you, your browser, and that website, under their own privacy policies. The app can't see what you browse.</li>
   </ul>
 </section>
@@ -230,6 +247,7 @@
 <section>
   <h2 id="emails">7. Suggestions and emails</h2>
   <p>In the app's <strong>Help</strong>, <strong>Send a suggestion</strong> opens a new, empty email to <strong>suggestions@phoenixdawnstudios.com</strong> in your mail app. <strong>Nothing is sent unless you send it</strong>, and the app adds nothing to it: no case, no device details, no ID. When you send it, or any other email to us, we receive your email address, the name your email shows, and whatever you write or attach. Please don't attach anything from a case you'd rather keep private.</p>
+  <p><strong>The diagnostic log.</strong> If you copy the app's <a href="#on-your-device">diagnostic log</a> and paste it into a message to us, we receive what's in it, such as the names of the websites whose links you shared into the app or opened from a card, and of the websites their preview pictures and videos came from, the first word of each button you pressed, and when the app started, went to the background and was touched. It never includes what's in your cases. It reaches us only if you paste it into a message and send it, and we treat it like the rest of that message.</p>
   <p>Email to our addresses is forwarded by our domain registrar, <strong>Porkbun</strong>, to a mailbox we keep with <strong>Google (Gmail)</strong>. Calls, texts and voicemails to our phone line come through <strong>Google Voice</strong>, which shows us your phone number. We use emails and other messages only to answer you, fix problems, improve the app, and keep ordinary business records. We won't add you to a mailing list unless you ask. Please don't send sensitive information, such as payment card numbers, by email.</p>
 </section>
 
@@ -246,7 +264,7 @@
   <h3 id="transcripts">Transcripts of your video and audio clips</h3>
   <p>On an iPhone or iPad with <strong>iOS or iPadOS 26 or later</strong>, the app writes out what's said in your video and audio clips with Apple's on-device speech recognition, so you can read and search it. It reads the clips you've added; <strong>it never uses your microphone</strong>, and <strong>the audio never leaves your device</strong>. It listens for your device's main language. The first time, your device may download Apple's speech model for that language from Apple; your clips aren't part of that download. On earlier versions of iOS and iPadOS, transcripts aren't available.</p>
   <h3 id="share-in">Sharing into the app</h3>
-  <p>When you share a photo, file, link or text to Conspiracy Tracker from another app, the app's share extension copies it into storage on your device that only the app and its extension can use (an App Group), and the app then moves it into its Inbox. What you share stays on your device and is never sent to us. A shared link's preview is fetched as described in <a href="#links">Web links</a>.</p>
+  <p>When you share a photo, file, link or text to Conspiracy Tracker from another app, the app's share extension copies it into storage on your device that only the app and its extension can use (an App Group), and the app then moves it into its Inbox. What you share stays on your device and is never sent to us. A shared link's preview, and its video if the page offers one, are fetched as described in <a href="#links">Web links</a>.</p>
   <h3 id="icloud-backup">iCloud backup</h3>
   <ul>
     <li><strong>Off until you turn it on,</strong> in the app's Settings (<strong>Back up to iCloud Drive</strong>).</li>
@@ -303,7 +321,7 @@
 
 <section>
   <h2 id="analytics">12. Analytics and what Apple tells us</h2>
-  <p>The app has no analytics, advertising, or crash-reporting tools of its own, and no purchase service (see <a href="#purchases">Purchases</a>). It sends us nothing about you or how you use it.</p>
+  <p>The app has no analytics, advertising, or crash-reporting tools of its own, and no purchase service (see <a href="#purchases">Purchases</a>). It sends us nothing about you or how you use it. The <a href="#on-your-device">diagnostic log</a> isn't analytics: it stays on your device, is never sent, and reaches us only if you paste it into a message to us yourself.</p>
   <p>Apple also gives us App Store statistics, such as downloads and sales. If you've chosen in your device's settings to share analytics with app developers, Apple may also give us usage statistics and crash reports. Apple de-identifies these, and we use them only to find and fix problems. You can turn this sharing off in Settings &rsaquo; Privacy &amp; Security &rsaquo; Analytics &amp; Improvements.</p>
 </section>
 
@@ -338,14 +356,14 @@
     </table>
   </div>
   <p><strong>Apple</strong> runs the App Store, processes payments and refunds, tells the app on your device whether you've bought the unlock (StoreKit), provides Face ID and Touch ID and the age range, stores your <a href="#icloud-backup">iCloud backup</a> in your own iCloud Drive if you turn it on, and serves the speech model your device downloads for <a href="#transcripts">transcripts</a>. Apple does this as an independent company under its own <a href="https://www.apple.com/legal/privacy/">privacy policy</a>, not as our service provider.</p>
-  <p><strong>Websites you add or share as links</strong> receive ordinary web requests, without cookies, straight from your device, as described in <a href="#links">Web links</a>. They aren't our service providers, and we receive nothing from them.</p>
+  <p><strong>Websites you add or share as links</strong>, and the websites that hold their preview pictures and videos, receive ordinary web requests, with no cookies of the app's own, straight from your device, as described in <a href="#links">Web links</a>. They aren't our service providers, and we receive nothing from them.</p>
   <p>We may also share information if the law requires it (for example, a valid court order), to protect the rights, safety, and property of our users, the public, or us, including to prevent fraud, or as part of a merger, acquisition, or sale of assets, in which case we'll require the new owner to respect this policy.</p>
 </section>
 
 <section>
   <h2 id="retention">14. How long we keep information</h2>
   <ul>
-    <li><strong>On your device:</strong> until you delete it in the app or delete the app. Copies may remain in your own device backups, backup files and iCloud backup copies until those are replaced or deleted.</li>
+    <li><strong>On your device:</strong> until you delete it in the app or delete the app. The <a href="#on-your-device">diagnostic log</a> keeps only the app's current run and the one before. Copies may remain in your own device backups, backup files and iCloud backup copies until those are replaced or deleted.</li>
     <li><strong>Suggestions, emails and other messages:</strong> up to 3 years after our last exchange, then deleted. We delete them sooner if you ask, unless we need them for a legal claim. If we learn an email came from a child under 13, we delete it promptly after we've replied (see <a href="#children">Children and teens</a>).</li>
     <li><strong>Apple's sales and financial reports:</strong> 7 years, for tax and accounting. They don't include your name or contact details.</li>
     <li><strong>Your age range:</strong> never stored.</li>
@@ -422,7 +440,8 @@
   <!-- Japan section (APPI notices; the tokushoho page links here as #japan). Keep it true to the build and to sections
        5, 7, 9, 13, 14, 16 and 17: open items are in the app's NEXT-STEPS.md ("Japan"). The Nov 12, 2026 changes (端末上で
        動作する機能, the 外部送信 table without the PDF code libraries, 安全管理措置 for a one-person studio) need the same
-       native-speaker check. -->
+       native-speaker check, and so do the Nov 15, 2026 changes (the 診断ログ item, the video row in 外部送信, the
+       pasted-log sentence in 取得する個人情報, and "本アプリが独自に Cookie を送信することはありません"). -->
   <p>This section is for users in Japan and is written in Japanese. The rest of this policy applies too.</p>
   <div lang="ja">
     <p>日本にお住まいのお客様には、本ポリシーの他の項目に加えて、個人情報の保護に関する法律（個人情報保護法）に基づき、次の事項をお知らせします。</p>
@@ -430,7 +449,7 @@
       <dt>事業者</dt>
       <dd>Phoenix Dawn Studios LLC（1354 Combermere Dr, Suite H, Troy, MI 48083-2743, USA）。代表者の氏名は、ご請求があれば遅滞なくお知らせします。</dd>
       <dt>本アプリについて</dt>
-      <dd>本アプリ（Conspiracy Tracker）は、お客様の個人情報を収集しません。ケースとその内容はお客様の端末に保存され（アプリの「iCloud バックアップ」をオンにした場合に限り、ケースのバックアップファイルがお客様ご自身の iCloud Drive にも保存されます。下記の「端末上で動作する機能」をご覧ください）、当社に送信されることはありません。リンクのプレビューを表示するための通信は、Cookie を送信せずに、お客様の端末から各ウェブサイトへ直接行われ、当社がその情報を受け取ることはありません（下記の「外部送信について」をご覧ください）。PDF は、アプリに組み込まれた PDF リーダーにより端末上で読み込まれ、インターネット接続は必要ありません。アプリ内課金のお支払いは Apple の App Store を通じて行われ、本アプリが購入に関する情報を当社に送信することはありません（Apple から当社に届く売上レポートには、お客様の氏名や連絡先は含まれません）。</dd>
+      <dd>本アプリ（Conspiracy Tracker）は、お客様の個人情報を収集しません。ケースとその内容はお客様の端末に保存され（アプリの「iCloud バックアップ」をオンにした場合に限り、ケースのバックアップファイルがお客様ご自身の iCloud Drive にも保存されます。下記の「端末上で動作する機能」をご覧ください）、当社に送信されることはありません。リンクのプレビューを表示するための通信と、リンク先のページが再生できる動画ファイルを示している場合（またはリンクのアドレスそのものが再生できる動画ファイルの場合）にその動画を保存するための通信は、お客様の端末から各ウェブサイト（画像や動画を保管している別のウェブサイトを含みます）へ直接行われ、本アプリが独自に Cookie を送信することはなく、当社がその情報を受け取ることもありません（下記の「外部送信について」をご覧ください）。PDF は、アプリに組み込まれた PDF リーダーにより端末上で読み込まれ、インターネット接続は必要ありません。アプリ内課金のお支払いは Apple の App Store を通じて行われ、本アプリが購入に関する情報を当社に送信することはありません（Apple から当社に届く売上レポートには、お客様の氏名や連絡先は含まれません）。</dd>
       <dt>端末上で動作する機能</dt>
       <dd>
         次の機能は、Apple が端末に備えている機能を使って動作します。いずれも、お客様のケースを当社や AI サービスに送信することはありません。
@@ -441,6 +460,8 @@
           <li>iCloud バックアップ：お客様がオンにするまではオフです。オンにすると、ケースに変更があった後、1日に1回まで（通常はアプリを離れたとき）、ケースのバックアップファイルをお客様ご自身の iCloud Drive の本アプリのフォルダ（「ファイル」アプリで確認できます）に保存します。ロックしたケースも読める形で含まれるため、お客様の iCloud Drive を開ける人はその内容を読むことができます（アプリで保存するバックアップファイルも同様です）。端末ごとに、新しいもの2つに加えて1週間以上前のものと1か月以上前のものを1つずつ残し（それらの候補を含め1台につき最大6つ）、それ以外の古いものは削除します。同じ Apple Account でサインインしている別の iPhone・iPad で「<span lang="en">Restore from iCloud</span>」を使うと復元でき、その端末のケースは復元した内容に置き換えられます。バックアップは「ファイル」アプリで削除できます。保存は Apple のプライバシーポリシーに従って Apple が行い、当社がその内容を見ることはできません。</li>
         </ul>
       </dd>
+      <dt>診断ログ</dt>
+      <dd>実際の端末でしか起きない不具合を調べるため、本アプリはアプリの動作の簡単な記録（診断ログ）を、端末内の本アプリの保存領域に小さなファイルとして保存します（今回の起動分と前回の起動分）。記録するのは、アプリの起動、前面・背面への切り替え、タッチの開始と終了、押したボタンの名前の最初の1語（お客様が付けたレイヤーや糸の色の名前の最初の1語の場合もあります）、他のアプリから共有されたものを取り込む各段階、他のアプリから共有したリンクやカードから開いたリンクについては、関係するウェブサイト（ページ、およびその画像や動画の保管先）の名前（example.com など）のみといった情報で、完全なウェブアドレスは含みません。カードの文字、タイトル、ファイル名、ページの文章など、ケースの内容は含まれません。診断ログが送信されることはありません。「<span lang="en">Settings &rsaquo; About</span>」の「<span lang="en">Version</span>」をすばやく5回タップすると「<span lang="en">Copy diagnostic log</span>」が表示され、お客様がタップした場合に限りクリップボードにコピーされます。その後は、お客様が貼り付けた場所にのみ渡ります。他のアプリのデータと同様に、端末自体のバックアップ（iCloud バックアップやコンピュータへのバックアップ）に含まれることがあります。</dd>
       <dt>取得する個人情報</dt>
       <dd>
         お客様から当社にご連絡をいただいた場合に限り、次の情報を取得します。
@@ -449,6 +470,7 @@
           <li>電話・SMS・留守番電話：電話番号と、お伝えいただいた内容</li>
           <li>郵便：お名前、ご住所と、郵便物の内容</li>
         </ul>
+        お客様が本アプリの診断ログ（上記の「診断ログ」をご覧ください）をコピーしてメールなどに貼り付けて送信された場合は、その内容（他のアプリから共有したリンクやカードから開いたリンクのウェブサイトの名前（そのプレビュー画像や動画を保管しているウェブサイトの名前を含みます）、押したボタンの名前の最初の1語、アプリの起動・背面への切り替え・タッチの記録など）も取得します。ケースの内容は含まれません。
       </dd>
       <dt>利用目的</dt>
       <dd>（1）お問い合わせ、ご意見、不具合の報告への回答、（2）不具合の調査と修正、（3）いただいたご意見・ご提案をもとにしたアプリの改善、（4）不正行為の防止とセキュリティの確保、（5）事業上の記録の保管と、税務・会計などの法令の遵守。お客様からのお申し出がない限り、メールマガジンなどの送付には使用しません。</dd>
@@ -497,9 +519,15 @@
         <tbody>
           <tr>
             <th scope="row">お客様がリンクとして追加または共有したウェブサイトと、そのプレビュー画像の保存先</th>
-            <td>IP アドレス、要求したページや画像のアドレス、通信が本アプリからであることを示す情報、端末の種類などの情報（ユーザーエージェント。iOS が自動的に付けます）。Cookie は送信しません。</td>
+            <td>IP アドレス、要求したページや画像のアドレス、通信が本アプリからであることを示す情報、端末の種類などの情報（ユーザーエージェント。iOS が自動的に付けます）。本アプリが独自に Cookie を送信することはありません。</td>
             <td>リンクのタイトル、短い説明、プレビュー画像を表示するため</td>
             <td>リンクを追加したとき、または他のアプリから本アプリにリンクを共有したとき（1回）</td>
+          </tr>
+          <tr>
+            <th scope="row">リンク先のページが示す動画ファイルの保存先（ページとは別のウェブサイト、たとえば動画を配信する事業者のサーバー（CDN）であることがよくあります）。リンクのアドレスそのものが再生できる動画ファイルの場合は、そのウェブサイト</th>
+            <td>IP アドレス、要求した動画ファイルのアドレス、通信が本アプリからであることを示す情報、端末の種類などの情報（ユーザーエージェント。iOS が自動的に付けます）。安全な接続（https）のみを使い、Cookie の送信も保存もしません。</td>
+            <td>リンク先の動画を端末に保存し、本アプリで再生できるクリップにするため（約 300 MB を超える動画や、3分以内に保存できない動画は保存しません）</td>
+            <td>本アプリが再生できる動画ファイル（MP4、MOV、M4V）を示すページ、またはそのような動画ファイルそのもののアドレスのリンクを追加したとき、または他のアプリから本アプリに共有したとき</td>
           </tr>
         </tbody>
       </table>
