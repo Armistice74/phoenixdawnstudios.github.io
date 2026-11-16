@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Conspiracy Tracker | Phoenix Dawn Studios</title>
-  <meta name="description" content="Conspiracy Tracker is a red-string evidence board for iPhone and iPad from Phoenix Dawn Studios: pin up photos, files, links and notes, tie them together with string, and work your true-crime cases. Coming soon.">
+  <meta name="description" content="Conspiracy Tracker is a red-string evidence board for iPhone, iPad and Android from Phoenix Dawn Studios: pin up photos, files, links and notes, tie them together with string, and work your true-crime cases. Coming soon.">
   <meta name="color-scheme" content="dark light">
   <meta name="theme-color" content="#14111C" media="(prefers-color-scheme: dark)">
   <meta name="theme-color" content="#FFF6EC" media="(prefers-color-scheme: light)">
@@ -16,7 +16,7 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Phoenix Dawn Studios">
   <meta property="og:title" content="Conspiracy Tracker | Phoenix Dawn Studios">
-  <meta property="og:description" content="Conspiracy Tracker, our red-string evidence board: pin up photos, files, links and notes, tie them together with string, and work your true-crime cases. Coming soon to iPhone and iPad.">
+  <meta property="og:description" content="Conspiracy Tracker, our red-string evidence board: pin up photos, files, links and notes, tie them together with string, and work your true-crime cases. Coming soon to iPhone, iPad and Android.">
   <meta property="og:url" content="https://phoenixdawnstudios.com/conspiracy-tracker/">
   <meta property="og:image" content="https://phoenixdawnstudios.com/og-image.png">
   <meta property="og:image:width" content="1200">
@@ -51,9 +51,11 @@
       <div class="container">
         <article class="app-card">
           <div class="app-copy">
-            <!-- Before launch: "Coming soon to iPhone and iPad". After launch: "Available on the App Store", and link
-                 the App Store listing below (WEBSITE-GUIDE.md, "Status wording"). -->
-            <p class="chip"><span class="chip-dot" aria-hidden="true"></span>Coming soon to iPhone and iPad</p>
+            <!-- Before launch: "Coming soon to iPhone, iPad and Android". After launch, per store: "Available on the App
+                 Store" / "Available on Google Play", and link each listing below (WEBSITE-GUIDE.md, "Status wording").
+                 The two stores launch separately (the iPhone first; Google Play after its review), so the chip can say
+                 "Out now on iPhone and iPad, coming soon to Android" in between. -->
+            <p class="chip"><span class="chip-dot" aria-hidden="true"></span>Coming soon to iPhone, iPad and Android</p>
             <h1 id="app-title">Conspiracy Tracker</h1>
             <p class="app-lede">A red-string evidence board in your pocket. Pin up photos, files, web links, notes and recordings, tie them together with string, and lay out the whole case on one board. Made for true-crime fans, podcast listeners and armchair detectives, and for any theory you can't stop thinking about.</p>
 
@@ -61,7 +63,7 @@
               <li>Pin up photos, PDFs, web links, notes, video and audio</li>
               <li>Tie anything to anything with colored string</li>
               <li>Date your cards, and a timeline plays the case back in order</li>
-              <li>Lock a case behind Face ID or Touch ID</li>
+              <li>Lock a case behind Face ID, Touch ID or your Android screen lock</li>
               <li>No sign-up, no ads, no tracking. We never see your cases.</li>
             </ul>
 
@@ -72,6 +74,16 @@
                   <path d="M10.5 18.5h3"/>
                 </svg>
                 <span><small>Coming soon to the</small> <strong>App Store</strong></span>
+              </li>
+              <!-- A drawn text badge, not Google's: Google's "Get it on Google Play" badge is only for a live listing it
+                   links to, under Google's brand guidelines (partnermarketinghub.withgoogle.com, badge rules). Swap in
+                   Google's badge with the listing link at launch, or keep a text link if in doubt. -->
+              <li class="store-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" focusable="false">
+                  <rect x="6.5" y="2.5" width="11" height="19" rx="2.8"/>
+                  <path d="M10.5 5.5h3"/>
+                </svg>
+                <span><small>Coming soon to</small> <strong>Google Play</strong></span>
               </li>
             </ul>
 
@@ -124,7 +136,7 @@
               </svg>
             </span>
             <h3>Keep it to yourself</h3>
-            <p>No account and nothing to sign up for. Your cases stay on your device, and any case can lock behind Face ID or Touch ID. Save a backup file or a printable case file whenever you like.</p>
+            <p>No account and nothing to sign up for. Your cases stay on your device (and, on Android, in your phone's own encrypted backup), and any case can lock behind Face ID or Touch ID, or on Android your screen lock. Save a backup file or a printable case file whenever you like.</p>
           </li>
         </ul>
       </div>
