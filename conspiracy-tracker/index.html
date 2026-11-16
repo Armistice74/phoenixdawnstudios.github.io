@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Conspiracy Tracker | Phoenix Dawn Studios</title>
-  <meta name="description" content="Conspiracy Tracker is a red-string evidence board for iPhone, iPad and Android from Phoenix Dawn Studios: pin up photos, files, links and notes, tie them together with string, and work your true-crime cases. Coming soon.">
+  <meta name="description" content="Conspiracy Tracker is a red-string evidence board for iPhone, iPad and Android from Phoenix Dawn Studios: pin up photos, files, links and notes, tie them together with string, and work your true-crime cases. Out now on iPhone and iPad, coming soon to Android.">
   <meta name="color-scheme" content="dark light">
   <meta name="theme-color" content="#14111C" media="(prefers-color-scheme: dark)">
   <meta name="theme-color" content="#FFF6EC" media="(prefers-color-scheme: light)">
@@ -13,10 +13,18 @@
   <link rel="apple-touch-icon" href="../apple-touch-icon.png">
   <link rel="manifest" href="../site.webmanifest">
   <link rel="stylesheet" href="../styles.css">
+  <!-- The live App Store badge: the same drawn badge as before launch, made a link and without the "Soon" tag. Kept on
+       this page rather than in the shared styles.css. It is our own drawn text badge, not Apple's "Download on the App
+       Store" artwork, which may only be used as Apple's marketing guidelines allow (WEBSITE-GUIDE.md, "Status wording"). -->
+  <style>
+    a.store-badge { text-decoration: none; }
+    a.store-badge::after { content: none; }
+    a.store-badge:hover, a.store-badge:focus-visible { border-color: var(--gold); }
+  </style>
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Phoenix Dawn Studios">
   <meta property="og:title" content="Conspiracy Tracker | Phoenix Dawn Studios">
-  <meta property="og:description" content="Conspiracy Tracker, our red-string evidence board: pin up photos, files, links and notes, tie them together with string, and work your true-crime cases. Coming soon to iPhone, iPad and Android.">
+  <meta property="og:description" content="Conspiracy Tracker, our red-string evidence board: pin up photos, files, links and notes, tie them together with string, and work your true-crime cases. Out now on iPhone and iPad, coming soon to Android.">
   <meta property="og:url" content="https://phoenixdawnstudios.com/conspiracy-tracker/">
   <meta property="og:image" content="https://phoenixdawnstudios.com/og-image.png">
   <meta property="og:image:width" content="1200">
@@ -54,8 +62,9 @@
             <!-- Before launch: "Coming soon to iPhone, iPad and Android". After launch, per store: "Available on the App
                  Store" / "Available on Google Play", and link each listing below (WEBSITE-GUIDE.md, "Status wording").
                  The two stores launch separately (the iPhone first; Google Play after its review), so the chip can say
-                 "Out now on iPhone and iPad, coming soon to Android" in between. -->
-            <p class="chip"><span class="chip-dot" aria-hidden="true"></span>Coming soon to iPhone, iPad and Android</p>
+                 "Out now on iPhone and iPad, coming soon to Android" in between. Nov 16, 2026: the iPhone and iPad app is
+                 out (Apple approved 1.0; the owner released it), so the chip and the App Store badge say so. -->
+            <p class="chip"><span class="chip-dot" aria-hidden="true"></span>Out now on iPhone and iPad, coming soon to Android</p>
             <h1 id="app-title">Conspiracy Tracker</h1>
             <p class="app-lede">A red-string evidence board in your pocket. Pin up photos, files, web links, notes and recordings, tie them together with string, and lay out the whole case on one board. Made for true-crime fans, podcast listeners and armchair detectives, and for any theory you can't stop thinking about.</p>
 
@@ -67,13 +76,15 @@
               <li>No sign-up, no ads, no tracking. We never see your cases.</li>
             </ul>
 
-            <ul class="store-badges" aria-label="Where it will be available">
-              <li class="store-badge">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" focusable="false">
-                  <rect x="6.5" y="2.5" width="11" height="19" rx="2.8"/>
-                  <path d="M10.5 18.5h3"/>
-                </svg>
-                <span><small>Coming soon to the</small> <strong>App Store</strong></span>
+            <ul class="store-badges" aria-label="Where to get it">
+              <li>
+                <a class="store-badge" href="https://apps.apple.com/app/conspiracy-tracker/id6832336318">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" focusable="false">
+                    <rect x="6.5" y="2.5" width="11" height="19" rx="2.8"/>
+                    <path d="M10.5 18.5h3"/>
+                  </svg>
+                  <span><small>Out now on the</small> <strong>App Store</strong></span>
+                </a>
               </li>
               <!-- A drawn text badge, not Google's: Google's "Get it on Google Play" badge is only for a live listing it
                    links to, under Google's brand guidelines (partnermarketinghub.withgoogle.com, badge rules). Swap in
@@ -87,7 +98,7 @@
               </li>
             </ul>
 
-            <p class="small-note">Free with one case at a time, with one case folder in it. A one-time purchase unlocks unlimited cases and case folders, with no subscription. Want a heads-up when it launches? <a href="mailto:hello@phoenixdawnstudios.com?subject=Tell%20me%20when%20Conspiracy%20Tracker%20launches">Drop us a line</a>.</p>
+            <p class="small-note">Free with one case at a time, with one case folder in it. A one-time purchase unlocks unlimited cases and case folders, with no subscription. On Android? Want a heads-up when it reaches Google Play? <a href="mailto:hello@phoenixdawnstudios.com?subject=Tell%20me%20when%20Conspiracy%20Tracker%20is%20on%20Google%20Play">Drop us a line</a>.</p>
           </div>
 
           <div class="app-art" aria-hidden="true">
